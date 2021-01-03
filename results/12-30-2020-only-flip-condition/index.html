@@ -19,8 +19,6 @@
         <title>
             FuzzBench: dec29-instru-cond report
             
-            (running)
-            
         </title>
 
         <!-- Import Materialize CSS -->
@@ -35,10 +33,6 @@
         <h1 class="center-align brown-text text-darken-3">
             FuzzBench: dec29-instru-cond report
         </h1>
-        
-        <h5 class="center-align brown-text text-darken-4">
-            (experiment incomplete/still running...)
-        </h5>
         
 
         <div class="card-panel amber lighten-5">
@@ -95,11 +89,11 @@
   <tbody>
     <tr>
       <th><a href="https://github.com/google/fuzzbench/blob/e8a7d0e4616643971050e3c47c1fbc91010c3b15/fuzzers/dark_instru_cond">dark_instru_cond</a></th>
-      <td>99.17</td>
+      <td>99.75</td>
     </tr>
     <tr>
       <th><a href="https://github.com/google/fuzzbench/blob/e8a7d0e4616643971050e3c47c1fbc91010c3b15/fuzzers/afldark_dev">afldark_dev</a></th>
-      <td>98.98</td>
+      <td>98.93</td>
     </tr>
   </tbody>
 </table>
@@ -119,11 +113,11 @@
   </thead>
   <tbody>
     <tr>
-      <th><a href="https://github.com/google/fuzzbench/blob/e8a7d0e4616643971050e3c47c1fbc91010c3b15/fuzzers/afldark_dev">afldark_dev</a></th>
+      <th><a href="https://github.com/google/fuzzbench/blob/e8a7d0e4616643971050e3c47c1fbc91010c3b15/fuzzers/dark_instru_cond">dark_instru_cond</a></th>
       <td>1.4</td>
     </tr>
     <tr>
-      <th><a href="https://github.com/google/fuzzbench/blob/e8a7d0e4616643971050e3c47c1fbc91010c3b15/fuzzers/dark_instru_cond">dark_instru_cond</a></th>
+      <th><a href="https://github.com/google/fuzzbench/blob/e8a7d0e4616643971050e3c47c1fbc91010c3b15/fuzzers/afldark_dev">afldark_dev</a></th>
       <td>1.6</td>
     </tr>
   </tbody>
@@ -195,28 +189,28 @@
   <tbody>
     <tr>
       <th>bloaty_fuzz_target</th>
-      <td>6662.5</td>
-      <td>6860.5</td>
+      <td>6716.0</td>
+      <td>6829.0</td>
     </tr>
     <tr>
       <th>freetype2-2017</th>
-      <td>17802.0</td>
-      <td>17667.0</td>
+      <td>17814.5</td>
+      <td>18367.5</td>
     </tr>
     <tr>
       <th>libxml2-v2.9.2</th>
-      <td>5893.5</td>
-      <td>6028.0</td>
+      <td>5887.0</td>
+      <td>5929.0</td>
     </tr>
     <tr>
       <th>mbedtls_fuzz_dtlsclient</th>
-      <td>7915.0</td>
-      <td>7909.0</td>
+      <td>7902.0</td>
+      <td>7901.5</td>
     </tr>
     <tr>
       <th>sqlite3_ossfuzz</th>
-      <td>26956.0</td>
-      <td>26055.5</td>
+      <td>26968.0</td>
+      <td>26630.0</td>
     </tr>
   </tbody>
 </table>
@@ -308,27 +302,27 @@
   <tbody>
     <tr>
       <th>dark_instru_cond</th>
-      <th>83700</th>
-      <td>4.0</td>
-      <td>6832.25</td>
-      <td>141.360945</td>
+      <th>86400</th>
+      <td>5.0</td>
+      <td>6832.2</td>
+      <td>122.532445</td>
       <td>6640.0</td>
-      <td>6776.50</td>
-      <td>6860.5</td>
-      <td>6916.25</td>
+      <td>6824.0</td>
+      <td>6829.0</td>
+      <td>6900.0</td>
       <td>6968.0</td>
     </tr>
     <tr>
       <th>afldark_dev</th>
-      <th>83700</th>
-      <td>2.0</td>
-      <td>6662.50</td>
-      <td>34.648232</td>
-      <td>6638.0</td>
-      <td>6650.25</td>
-      <td>6662.5</td>
-      <td>6674.75</td>
-      <td>6687.0</td>
+      <th>86400</th>
+      <td>5.0</td>
+      <td>6768.4</td>
+      <td>119.475102</td>
+      <td>6643.0</td>
+      <td>6691.0</td>
+      <td>6716.0</td>
+      <td>6890.0</td>
+      <td>6902.0</td>
     </tr>
   </tbody>
 </table>
@@ -351,6 +345,55 @@
                 </li>
             </ul>
 
+            
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Unique code coverage plots
+                    </div>
+                    <div class="collapsible-body">
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Ranking by unique code regions covered</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="bloaty_fuzz_target_ranking_unique_region.svg">
+                                    Each bar shows the total number of code regions found by a given fuzzer.
+                                    The colored area shows the number of unique code regions
+                                    (i.e., regions that were not covered by any other fuzzers).
+                            </div>
+                        </div> <!-- row -->
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Pairwise unique code coverage</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="bloaty_fuzz_target_pairwise_unique_coverage_plot.svg">
+                                    Each cell represents the number of code regions covered by the fuzzer
+                                    of the column but not by the fuzzer of the row
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Code coverage reports for each fuzzer on this benchmark
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="collection">
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/bloaty_fuzz_target/afldark_dev/index.html" class="collection-item">afldark_dev</a>
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/bloaty_fuzz_target/dark_instru_cond/index.html" class="collection-item">dark_instru_cond</a>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
             
 
         </div> <!-- id="bloaty_fuzz_target" -->
@@ -436,28 +479,28 @@
   </thead>
   <tbody>
     <tr>
-      <th>afldark_dev</th>
-      <th>83700</th>
-      <td>3.0</td>
-      <td>17764.0</td>
-      <td>80.987653</td>
-      <td>17671.0</td>
-      <td>17736.5</td>
-      <td>17802.0</td>
-      <td>17810.5</td>
-      <td>17819.0</td>
+      <th>dark_instru_cond</th>
+      <th>86400</th>
+      <td>4.0</td>
+      <td>18246.5</td>
+      <td>1117.233040</td>
+      <td>16962.0</td>
+      <td>17491.5</td>
+      <td>18367.5</td>
+      <td>19122.5</td>
+      <td>19289.0</td>
     </tr>
     <tr>
-      <th>dark_instru_cond</th>
-      <th>83700</th>
-      <td>3.0</td>
-      <td>17927.0</td>
-      <td>1119.870082</td>
-      <td>16960.0</td>
-      <td>17313.5</td>
-      <td>17667.0</td>
-      <td>18410.5</td>
-      <td>19154.0</td>
+      <th>afldark_dev</th>
+      <th>86400</th>
+      <td>4.0</td>
+      <td>17816.5</td>
+      <td>120.704874</td>
+      <td>17671.0</td>
+      <td>17771.5</td>
+      <td>17814.5</td>
+      <td>17859.5</td>
+      <td>17966.0</td>
     </tr>
   </tbody>
 </table>
@@ -480,6 +523,55 @@
                 </li>
             </ul>
 
+            
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Unique code coverage plots
+                    </div>
+                    <div class="collapsible-body">
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Ranking by unique code regions covered</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="freetype2-2017_ranking_unique_region.svg">
+                                    Each bar shows the total number of code regions found by a given fuzzer.
+                                    The colored area shows the number of unique code regions
+                                    (i.e., regions that were not covered by any other fuzzers).
+                            </div>
+                        </div> <!-- row -->
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Pairwise unique code coverage</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="freetype2-2017_pairwise_unique_coverage_plot.svg">
+                                    Each cell represents the number of code regions covered by the fuzzer
+                                    of the column but not by the fuzzer of the row
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Code coverage reports for each fuzzer on this benchmark
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="collection">
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/freetype2-2017/afldark_dev/index.html" class="collection-item">afldark_dev</a>
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/freetype2-2017/dark_instru_cond/index.html" class="collection-item">dark_instru_cond</a>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
             
 
         </div> <!-- id="freetype2-2017" -->
@@ -566,27 +658,27 @@
   <tbody>
     <tr>
       <th>dark_instru_cond</th>
-      <th>83700</th>
-      <td>3.0</td>
-      <td>5967.0</td>
-      <td>136.165341</td>
-      <td>5811.0</td>
-      <td>5919.50</td>
-      <td>6028.0</td>
-      <td>6045.00</td>
-      <td>6062.0</td>
+      <th>86400</th>
+      <td>4.0</td>
+      <td>5936.0</td>
+      <td>133.663757</td>
+      <td>5813.0</td>
+      <td>5825.75</td>
+      <td>5929.0</td>
+      <td>6039.25</td>
+      <td>6073.0</td>
     </tr>
     <tr>
       <th>afldark_dev</th>
-      <th>83700</th>
-      <td>2.0</td>
-      <td>5893.5</td>
-      <td>9.192388</td>
+      <th>86400</th>
+      <td>5.0</td>
+      <td>5873.2</td>
+      <td>181.316574</td>
+      <td>5596.0</td>
+      <td>5878.00</td>
       <td>5887.0</td>
-      <td>5890.25</td>
-      <td>5893.5</td>
-      <td>5896.75</td>
-      <td>5900.0</td>
+      <td>5900.00</td>
+      <td>6105.0</td>
     </tr>
   </tbody>
 </table>
@@ -609,6 +701,55 @@
                 </li>
             </ul>
 
+            
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Unique code coverage plots
+                    </div>
+                    <div class="collapsible-body">
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Ranking by unique code regions covered</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libxml2-v2.9.2_ranking_unique_region.svg">
+                                    Each bar shows the total number of code regions found by a given fuzzer.
+                                    The colored area shows the number of unique code regions
+                                    (i.e., regions that were not covered by any other fuzzers).
+                            </div>
+                        </div> <!-- row -->
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Pairwise unique code coverage</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libxml2-v2.9.2_pairwise_unique_coverage_plot.svg">
+                                    Each cell represents the number of code regions covered by the fuzzer
+                                    of the column but not by the fuzzer of the row
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Code coverage reports for each fuzzer on this benchmark
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="collection">
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/libxml2-v2.9.2/afldark_dev/index.html" class="collection-item">afldark_dev</a>
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/libxml2-v2.9.2/dark_instru_cond/index.html" class="collection-item">dark_instru_cond</a>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
             
 
         </div> <!-- id="libxml2-v2.9.2" -->
@@ -656,6 +797,22 @@
             </div>
 
             
+            <div class="card-panel deep-orange lighten-3">
+                <div class="row valign-wrapper">
+                    <div class="col s4 m2 center-align">
+                        <i class="medium material-icons">error</i>
+                    </div>
+                    <div class="col s8 m10">
+                        <span class="black-text">
+                            The following fuzzers do not have enough samples:
+                            <strong>
+                                dark_instru_cond.
+                            </strong>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
 
             <ul class="collapsible">
                 <li>
@@ -695,26 +852,26 @@
   <tbody>
     <tr>
       <th>afldark_dev</th>
-      <th>82800</th>
-      <td>5.0</td>
-      <td>7883.20</td>
-      <td>109.296386</td>
-      <td>7706.0</td>
-      <td>7868.00</td>
-      <td>7915.0</td>
-      <td>7930.0</td>
-      <td>7997.0</td>
+      <th>86400</th>
+      <td>4.0</td>
+      <td>7893.5</td>
+      <td>98.716767</td>
+      <td>7768.0</td>
+      <td>7847.50</td>
+      <td>7902.0</td>
+      <td>7948.00</td>
+      <td>8002.0</td>
     </tr>
     <tr>
       <th>dark_instru_cond</th>
-      <th>82800</th>
-      <td>4.0</td>
-      <td>7890.25</td>
-      <td>64.983972</td>
-      <td>7797.0</td>
-      <td>7874.25</td>
-      <td>7909.0</td>
-      <td>7925.0</td>
+      <th>86400</th>
+      <td>2.0</td>
+      <td>7901.5</td>
+      <td>62.932504</td>
+      <td>7857.0</td>
+      <td>7879.25</td>
+      <td>7901.5</td>
+      <td>7923.75</td>
       <td>7946.0</td>
     </tr>
   </tbody>
@@ -738,6 +895,55 @@
                 </li>
             </ul>
 
+            
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Unique code coverage plots
+                    </div>
+                    <div class="collapsible-body">
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Ranking by unique code regions covered</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="mbedtls_fuzz_dtlsclient_ranking_unique_region.svg">
+                                    Each bar shows the total number of code regions found by a given fuzzer.
+                                    The colored area shows the number of unique code regions
+                                    (i.e., regions that were not covered by any other fuzzers).
+                            </div>
+                        </div> <!-- row -->
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Pairwise unique code coverage</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="mbedtls_fuzz_dtlsclient_pairwise_unique_coverage_plot.svg">
+                                    Each cell represents the number of code regions covered by the fuzzer
+                                    of the column but not by the fuzzer of the row
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Code coverage reports for each fuzzer on this benchmark
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="collection">
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/mbedtls_fuzz_dtlsclient/afldark_dev/index.html" class="collection-item">afldark_dev</a>
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/mbedtls_fuzz_dtlsclient/dark_instru_cond/index.html" class="collection-item">dark_instru_cond</a>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
             
 
         </div> <!-- id="mbedtls_fuzz_dtlsclient" -->
@@ -785,6 +991,22 @@
             </div>
 
             
+            <div class="card-panel deep-orange lighten-3">
+                <div class="row valign-wrapper">
+                    <div class="col s4 m2 center-align">
+                        <i class="medium material-icons">error</i>
+                    </div>
+                    <div class="col s8 m10">
+                        <span class="black-text">
+                            The following fuzzers do not have enough samples:
+                            <strong>
+                                afldark_dev.
+                            </strong>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
 
             <ul class="collapsible">
                 <li>
@@ -824,27 +1046,27 @@
   <tbody>
     <tr>
       <th>afldark_dev</th>
-      <th>83700</th>
+      <th>86400</th>
       <td>3.0</td>
-      <td>26801.333333</td>
-      <td>692.085496</td>
-      <td>26045.0</td>
-      <td>26500.50</td>
-      <td>26956.0</td>
-      <td>27179.50</td>
-      <td>27403.0</td>
+      <td>26863.0</td>
+      <td>764.924179</td>
+      <td>26051.0</td>
+      <td>26509.5</td>
+      <td>26968.0</td>
+      <td>27269.0</td>
+      <td>27570.0</td>
     </tr>
     <tr>
       <th>dark_instru_cond</th>
-      <th>83700</th>
-      <td>2.0</td>
-      <td>26055.500000</td>
-      <td>614.475793</td>
-      <td>25621.0</td>
-      <td>25838.25</td>
-      <td>26055.5</td>
-      <td>26272.75</td>
-      <td>26490.0</td>
+      <th>86400</th>
+      <td>4.0</td>
+      <td>26581.0</td>
+      <td>721.009478</td>
+      <td>25654.0</td>
+      <td>26338.0</td>
+      <td>26630.0</td>
+      <td>26873.0</td>
+      <td>27410.0</td>
     </tr>
   </tbody>
 </table>
@@ -867,6 +1089,55 @@
                 </li>
             </ul>
 
+            
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Unique code coverage plots
+                    </div>
+                    <div class="collapsible-body">
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Ranking by unique code regions covered</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="sqlite3_ossfuzz_ranking_unique_region.svg">
+                                    Each bar shows the total number of code regions found by a given fuzzer.
+                                    The colored area shows the number of unique code regions
+                                    (i.e., regions that were not covered by any other fuzzers).
+                            </div>
+                        </div> <!-- row -->
+
+                        <div class="row">
+                            <div class="col s6 offset-s3">
+                                <h5 class="center-align">Pairwise unique code coverage</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="sqlite3_ossfuzz_pairwise_unique_coverage_plot.svg">
+                                    Each cell represents the number of code regions covered by the fuzzer
+                                    of the column but not by the fuzzer of the row
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Code coverage reports for each fuzzer on this benchmark
+                    </div>
+                    <div class="collapsible-body">
+                        <div class="collection">
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/sqlite3_ossfuzz/afldark_dev/index.html" class="collection-item">afldark_dev</a>
+                            
+                            <a href="/local/pfm/out/experiment-data/dec29-instru-cond/coverage/reports/sqlite3_ossfuzz/dark_instru_cond/index.html" class="collection-item">dark_instru_cond</a>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
             
 
         </div> <!-- id="sqlite3_ossfuzz" -->
