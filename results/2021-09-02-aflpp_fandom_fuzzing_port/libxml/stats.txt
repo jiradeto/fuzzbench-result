@@ -1,0 +1,885 @@
+++++ stats ++++
+
+
+ - - -  libxml2-v2.9.2-app_frozen/  - - - 
+
+
+
+ ###  trial-1/  ### 
+start_time        : 1630304702
+last_update       : 1630391075
+run_time          : 86372
+fuzzer_pid        : 14
+cycles_done       : 25
+cycles_wo_finds   : 0
+execs_done        : 999207738
+execs_per_sec     : 11568.59
+execs_ps_last_min : 13521.41
+paths_total       : 10073
+paths_favored     : 1078
+paths_found       : 10072
+paths_imported    : 0
+max_depth         : 39
+cur_path          : 9661
+pending_favs      : 0
+pending_total     : 2911
+variable_paths    : 7136
+stability         : 78.44%
+bitmap_cvg        : 9.43%
+unique_crashes    : 0
+unique_hangs      : 37
+last_path         : 1630390871
+last_crash        : 0
+last_hang         : 1630386226
+execs_since_crash : 999207738
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4809
+total_edges       : 50995
+var_byte_count    : 1037
+havoc_expansion   : 0
+testcache_size    : 2096940
+testcache_count   : 1517
+testcache_evict   : 294069961
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-2/  ### 
+start_time        : 1630304698
+last_update       : 1630391075
+run_time          : 86377
+fuzzer_pid        : 13
+cycles_done       : 27
+cycles_wo_finds   : 0
+execs_done        : 1069903908
+execs_per_sec     : 12386.43
+execs_ps_last_min : 14941.53
+paths_total       : 9259
+paths_favored     : 1065
+paths_found       : 9258
+paths_imported    : 0
+max_depth         : 34
+cur_path          : 2560
+pending_favs      : 1
+pending_total     : 2461
+variable_paths    : 5644
+stability         : 80.35%
+bitmap_cvg        : 8.78%
+unique_crashes    : 1
+unique_hangs      : 28
+last_path         : 1630391062
+last_crash        : 1630376153
+last_hang         : 1630385631
+execs_since_crash : 149252659
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4478
+total_edges       : 50995
+var_byte_count    : 880
+havoc_expansion   : 0
+testcache_size    : 2091578
+testcache_count   : 1304
+testcache_evict   : 321056446
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-3/  ### 
+start_time        : 1630304697
+last_update       : 1630391075
+run_time          : 86377
+fuzzer_pid        : 13
+cycles_done       : 26
+cycles_wo_finds   : 0
+execs_done        : 1018424174
+execs_per_sec     : 11790.36
+execs_ps_last_min : 13750.71
+paths_total       : 9981
+paths_favored     : 1168
+paths_found       : 9980
+paths_imported    : 0
+max_depth         : 43
+cur_path          : 3246
+pending_favs      : 0
+pending_total     : 2930
+variable_paths    : 7272
+stability         : 83.14%
+bitmap_cvg        : 9.49%
+unique_crashes    : 0
+unique_hangs      : 26
+last_path         : 1630390554
+last_crash        : 0
+last_hang         : 1630382427
+execs_since_crash : 1018424174
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4839
+total_edges       : 50995
+var_byte_count    : 816
+havoc_expansion   : 0
+testcache_size    : 2079805
+testcache_count   : 1709
+testcache_evict   : 297783233
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-4/  ### 
+start_time        : 1630304700
+last_update       : 1630391083
+run_time          : 86383
+fuzzer_pid        : 13
+cycles_done       : 17
+cycles_wo_finds   : 0
+execs_done        : 979126028
+execs_per_sec     : 11334.64
+execs_ps_last_min : 13037.34
+paths_total       : 10362
+paths_favored     : 1134
+paths_found       : 10361
+paths_imported    : 0
+max_depth         : 58
+cur_path          : 9182
+pending_favs      : 0
+pending_total     : 3636
+variable_paths    : 7410
+stability         : 83.00%
+bitmap_cvg        : 9.63%
+unique_crashes    : 0
+unique_hangs      : 130
+last_path         : 1630390659
+last_crash        : 0
+last_hang         : 1630382975
+execs_since_crash : 979126028
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4911
+total_edges       : 50995
+var_byte_count    : 835
+havoc_expansion   : 0
+testcache_size    : 2057000
+testcache_count   : 1446
+testcache_evict   : 292745607
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-5/  ### 
+start_time        : 1630304702
+last_update       : 1630391075
+run_time          : 86373
+fuzzer_pid        : 13
+cycles_done       : 24
+cycles_wo_finds   : 0
+execs_done        : 1031643417
+execs_per_sec     : 11943.99
+execs_ps_last_min : 14313.80
+paths_total       : 10061
+paths_favored     : 1082
+paths_found       : 10060
+paths_imported    : 0
+max_depth         : 39
+cur_path          : 1496
+pending_favs      : 0
+pending_total     : 3063
+variable_paths    : 5837
+stability         : 81.70%
+bitmap_cvg        : 9.22%
+unique_crashes    : 0
+unique_hangs      : 20
+last_path         : 1630390796
+last_crash        : 0
+last_hang         : 1630390724
+execs_since_crash : 1031643417
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4704
+total_edges       : 50995
+var_byte_count    : 861
+havoc_expansion   : 0
+testcache_size    : 2094480
+testcache_count   : 1424
+testcache_evict   : 304254221
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+
+
+ - - -  libxml2-v2.9.2-app_rf_u_wrs/  - - - 
+
+
+
+ ###  trial-10/  ### 
+start_time        : 1630304701
+last_update       : 1630391082
+run_time          : 86381
+fuzzer_pid        : 13
+cycles_done       : 1468
+cycles_wo_finds   : 1
+execs_done        : 95576736
+execs_per_sec     : 1106.45
+execs_ps_last_min : 1646.72
+paths_total       : 7297
+paths_favored     : 1000
+paths_found       : 7296
+paths_imported    : 0
+max_depth         : 81
+cur_path          : 5834
+pending_favs      : 0
+pending_total     : 1
+variable_paths    : 4982
+stability         : 90.01%
+bitmap_cvg        : 8.15%
+unique_crashes    : 0
+unique_hangs      : 22
+last_path         : 1630390944
+last_crash        : 0
+last_hang         : 1630388434
+execs_since_crash : 95576736
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4154
+total_edges       : 50995
+var_byte_count    : 415
+havoc_expansion   : 5
+testcache_size    : 2064553
+testcache_count   : 258
+testcache_evict   : 23220433
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-6/  ### 
+start_time        : 1630304704
+last_update       : 1630391078
+run_time          : 86374
+fuzzer_pid        : 13
+cycles_done       : 1268
+cycles_wo_finds   : 0
+execs_done        : 76790056
+execs_per_sec     : 889.04
+execs_ps_last_min : 1228.16
+paths_total       : 6803
+paths_favored     : 955
+paths_found       : 6802
+paths_imported    : 0
+max_depth         : 57
+cur_path          : 6733
+pending_favs      : 0
+pending_total     : 0
+variable_paths    : 4570
+stability         : 82.42%
+bitmap_cvg        : 7.83%
+unique_crashes    : 0
+unique_hangs      : 18
+last_path         : 1630391035
+last_crash        : 0
+last_hang         : 1630363857
+execs_since_crash : 76790056
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 3994
+total_edges       : 50995
+var_byte_count    : 702
+havoc_expansion   : 5
+testcache_size    : 2096260
+testcache_count   : 509
+testcache_evict   : 18402795
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-7/  ### 
+start_time        : 1630304705
+last_update       : 1630391077
+run_time          : 86371
+fuzzer_pid        : 13
+cycles_done       : 3512
+cycles_wo_finds   : 0
+execs_done        : 259020256
+execs_per_sec     : 2998.90
+execs_ps_last_min : 3522.22
+paths_total       : 7397
+paths_favored     : 995
+paths_found       : 7396
+paths_imported    : 0
+max_depth         : 59
+cur_path          : 6768
+pending_favs      : 0
+pending_total     : 1
+variable_paths    : 5077
+stability         : 83.42%
+bitmap_cvg        : 8.04%
+unique_crashes    : 2
+unique_hangs      : 29
+last_path         : 1630391072
+last_crash        : 1630320496
+last_hang         : 1630388425
+execs_since_crash : 204021615
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4101
+total_edges       : 50995
+var_byte_count    : 680
+havoc_expansion   : 5
+testcache_size    : 2025416
+testcache_count   : 370
+testcache_evict   : 67268069
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-8/  ### 
+start_time        : 1630304704
+last_update       : 1630391081
+run_time          : 86376
+fuzzer_pid        : 13
+cycles_done       : 2014
+cycles_wo_finds   : 1
+execs_done        : 137350021
+execs_per_sec     : 1590.12
+execs_ps_last_min : 1755.57
+paths_total       : 7305
+paths_favored     : 1007
+paths_found       : 7304
+paths_imported    : 0
+max_depth         : 70
+cur_path          : 3280
+pending_favs      : 0
+pending_total     : 0
+variable_paths    : 4651
+stability         : 87.49%
+bitmap_cvg        : 8.02%
+unique_crashes    : 4
+unique_hangs      : 30
+last_path         : 1630390960
+last_crash        : 1630372749
+last_hang         : 1630381971
+execs_since_crash : 22120860
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4092
+total_edges       : 50995
+var_byte_count    : 512
+havoc_expansion   : 5
+testcache_size    : 2094755
+testcache_count   : 507
+testcache_evict   : 33547616
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-9/  ### 
+start_time        : 1630304702
+last_update       : 1630391079
+run_time          : 86377
+fuzzer_pid        : 13
+cycles_done       : 1836
+cycles_wo_finds   : 0
+execs_done        : 118147088
+execs_per_sec     : 1367.81
+execs_ps_last_min : 1621.21
+paths_total       : 6982
+paths_favored     : 965
+paths_found       : 6981
+paths_imported    : 0
+max_depth         : 56
+cur_path          : 4649
+pending_favs      : 0
+pending_total     : 0
+variable_paths    : 4651
+stability         : 85.74%
+bitmap_cvg        : 7.92%
+unique_crashes    : 1
+unique_hangs      : 18
+last_path         : 1630391065
+last_crash        : 1630363136
+last_hang         : 1630353117
+execs_since_crash : 30226862
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4040
+total_edges       : 50995
+var_byte_count    : 576
+havoc_expansion   : 5
+testcache_size    : 2079672
+testcache_count   : 450
+testcache_evict   : 29048534
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+
+
+ - - -  libxml2-v2.9.2-app_wrs_rf_rp/  - - - 
+
+
+
+ ###  trial-11/  ### 
+start_time        : 1630304706
+last_update       : 1630391090
+run_time          : 86383
+fuzzer_pid        : 13
+cycles_done       : 2111
+cycles_wo_finds   : 11
+execs_done        : 153768420
+execs_per_sec     : 1780.06
+execs_ps_last_min : 1289.97
+paths_total       : 7569
+paths_favored     : 981
+paths_found       : 7568
+paths_imported    : 0
+max_depth         : 82
+cur_path          : 3255
+pending_favs      : 0
+pending_total     : 0
+variable_paths    : 4991
+stability         : 88.68%
+bitmap_cvg        : 8.11%
+unique_crashes    : 1
+unique_hangs      : 24
+last_path         : 1630390400
+last_crash        : 1630360995
+last_hang         : 1630375535
+execs_since_crash : 40245741
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4135
+total_edges       : 50995
+var_byte_count    : 468
+havoc_expansion   : 5
+testcache_size    : 2062029
+testcache_count   : 439
+testcache_evict   : 38285006
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-12/  ### 
+start_time        : 1630304706
+last_update       : 1630391079
+run_time          : 86372
+fuzzer_pid        : 13
+cycles_done       : 1855
+cycles_wo_finds   : 2
+execs_done        : 136645412
+execs_per_sec     : 1582.04
+execs_ps_last_min : 2201.15
+paths_total       : 7780
+paths_favored     : 1021
+paths_found       : 7779
+paths_imported    : 0
+max_depth         : 85
+cur_path          : 2870
+pending_favs      : 0
+pending_total     : 0
+variable_paths    : 5561
+stability         : 87.11%
+bitmap_cvg        : 8.35%
+unique_crashes    : 1
+unique_hangs      : 16
+last_path         : 1630390930
+last_crash        : 1630364789
+last_hang         : 1630389334
+execs_since_crash : 32912792
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4258
+total_edges       : 50995
+var_byte_count    : 549
+havoc_expansion   : 5
+testcache_size    : 2095601
+testcache_count   : 330
+testcache_evict   : 34519870
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-13/  ### 
+start_time        : 1630304702
+last_update       : 1630391077
+run_time          : 86374
+fuzzer_pid        : 13
+cycles_done       : 1629
+cycles_wo_finds   : 0
+execs_done        : 111585752
+execs_per_sec     : 1291.89
+execs_ps_last_min : 1003.63
+paths_total       : 7537
+paths_favored     : 1017
+paths_found       : 7536
+paths_imported    : 0
+max_depth         : 78
+cur_path          : 4646
+pending_favs      : 0
+pending_total     : 1
+variable_paths    : 4513
+stability         : 85.54%
+bitmap_cvg        : 8.52%
+unique_crashes    : 5
+unique_hangs      : 15
+last_path         : 1630391019
+last_crash        : 1630368946
+last_hang         : 1630371616
+execs_since_crash : 21994500
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4344
+total_edges       : 50995
+var_byte_count    : 628
+havoc_expansion   : 5
+testcache_size    : 2088452
+testcache_count   : 403
+testcache_evict   : 27401970
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-14/  ### 
+start_time        : 1630304700
+last_update       : 1630391083
+run_time          : 86383
+fuzzer_pid        : 13
+cycles_done       : 1669
+cycles_wo_finds   : 0
+execs_done        : 109746680
+execs_per_sec     : 1270.46
+execs_ps_last_min : 1196.43
+paths_total       : 7084
+paths_favored     : 940
+paths_found       : 7083
+paths_imported    : 0
+max_depth         : 67
+cur_path          : 4910
+pending_favs      : 0
+pending_total     : 1
+variable_paths    : 4872
+stability         : 84.86%
+bitmap_cvg        : 7.94%
+unique_crashes    : 0
+unique_hangs      : 17
+last_path         : 1630391038
+last_crash        : 0
+last_hang         : 1630373396
+execs_since_crash : 109746680
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4049
+total_edges       : 50995
+var_byte_count    : 613
+havoc_expansion   : 5
+testcache_size    : 2058418
+testcache_count   : 384
+testcache_evict   : 27224129
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-15/  ### 
+start_time        : 1630304705
+last_update       : 1630391077
+run_time          : 86371
+fuzzer_pid        : 13
+cycles_done       : 1948
+cycles_wo_finds   : 3
+execs_done        : 145023110
+execs_per_sec     : 1679.05
+execs_ps_last_min : 1866.78
+paths_total       : 7996
+paths_favored     : 1032
+paths_found       : 7995
+paths_imported    : 0
+max_depth         : 74
+cur_path          : 5479
+pending_favs      : 0
+pending_total     : 0
+variable_paths    : 5178
+stability         : 86.68%
+bitmap_cvg        : 8.48%
+unique_crashes    : 10
+unique_hangs      : 14
+last_path         : 1630390900
+last_crash        : 1630368232
+last_hang         : 1630379992
+execs_since_crash : 31221796
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4324
+total_edges       : 50995
+var_byte_count    : 576
+havoc_expansion   : 5
+testcache_size    : 2084306
+testcache_count   : 498
+testcache_evict   : 36038713
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+
+
+ - - -  libxml2-v2.9.2-app_wrs_rp/  - - - 
+
+
+
+ ###  trial-16/  ### 
+start_time        : 1630304706
+last_update       : 1630391075
+run_time          : 86369
+fuzzer_pid        : 13
+cycles_done       : 16251
+cycles_wo_finds   : 1
+execs_done        : 1104792213
+execs_per_sec     : 12791.48
+execs_ps_last_min : 15520.83
+paths_total       : 6613
+paths_favored     : 1041
+paths_found       : 6612
+paths_imported    : 0
+max_depth         : 57
+cur_path          : 1928
+pending_favs      : 0
+pending_total     : 10
+variable_paths    : 4252
+stability         : 83.93%
+bitmap_cvg        : 8.57%
+unique_crashes    : 5
+unique_hangs      : 26
+last_path         : 1630391064
+last_crash        : 1630367483
+last_hang         : 1630382620
+execs_since_crash : 252885975
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4369
+total_edges       : 50995
+var_byte_count    : 702
+havoc_expansion   : 5
+testcache_size    : 2096903
+testcache_count   : 942
+testcache_evict   : 227294452
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-17/  ### 
+start_time        : 1630304704
+last_update       : 1630391075
+run_time          : 86370
+fuzzer_pid        : 13
+cycles_done       : 16020
+cycles_wo_finds   : 1
+execs_done        : 1125595800
+execs_per_sec     : 13032.15
+execs_ps_last_min : 15628.79
+paths_total       : 6813
+paths_favored     : 1064
+paths_found       : 6812
+paths_imported    : 0
+max_depth         : 61
+cur_path          : 5006
+pending_favs      : 0
+pending_total     : 19
+variable_paths    : 3782
+stability         : 89.11%
+bitmap_cvg        : 8.64%
+unique_crashes    : 0
+unique_hangs      : 29
+last_path         : 1630391066
+last_crash        : 0
+last_hang         : 1630386229
+execs_since_crash : 1125595800
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4406
+total_edges       : 50995
+var_byte_count    : 480
+havoc_expansion   : 5
+testcache_size    : 2095651
+testcache_count   : 962
+testcache_evict   : 226469031
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-18/  ### 
+start_time        : 1630304701
+last_update       : 1630391075
+run_time          : 86373
+fuzzer_pid        : 13
+cycles_done       : 16017
+cycles_wo_finds   : 36
+execs_done        : 1105814236
+execs_per_sec     : 12802.68
+execs_ps_last_min : 15283.72
+paths_total       : 6800
+paths_favored     : 1021
+paths_found       : 6799
+paths_imported    : 0
+max_depth         : 53
+cur_path          : 2514
+pending_favs      : 0
+pending_total     : 16
+variable_paths    : 4072
+stability         : 82.49%
+bitmap_cvg        : 8.70%
+unique_crashes    : 0
+unique_hangs      : 24
+last_path         : 1630390875
+last_crash        : 0
+last_hang         : 1630380191
+execs_since_crash : 1105814236
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4437
+total_edges       : 50995
+var_byte_count    : 777
+havoc_expansion   : 5
+testcache_size    : 2041352
+testcache_count   : 901
+testcache_evict   : 234393297
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-19/  ### 
+start_time        : 1630304703
+last_update       : 1630391075
+run_time          : 86372
+fuzzer_pid        : 13
+cycles_done       : 17321
+cycles_wo_finds   : 53
+execs_done        : 1108950156
+execs_per_sec     : 12839.23
+execs_ps_last_min : 14555.34
+paths_total       : 6240
+paths_favored     : 1011
+paths_found       : 6239
+paths_imported    : 0
+max_depth         : 42
+cur_path          : 3854
+pending_favs      : 0
+pending_total     : 12
+variable_paths    : 3866
+stability         : 77.85%
+bitmap_cvg        : 8.31%
+unique_crashes    : 3
+unique_hangs      : 32
+last_path         : 1630390804
+last_crash        : 1630348435
+last_hang         : 1630389950
+execs_since_crash : 477012535
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4239
+total_edges       : 50995
+var_byte_count    : 939
+havoc_expansion   : 5
+testcache_size    : 2097147
+testcache_count   : 939
+testcache_evict   : 234026875
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
+ ###  trial-20/  ### 
+start_time        : 1630304700
+last_update       : 1630391075
+run_time          : 86374
+fuzzer_pid        : 13
+cycles_done       : 16754
+cycles_wo_finds   : 28
+execs_done        : 1109742932
+execs_per_sec     : 12847.98
+execs_ps_last_min : 15492.88
+paths_total       : 6655
+paths_favored     : 1076
+paths_found       : 6654
+paths_imported    : 0
+max_depth         : 68
+cur_path          : 2709
+pending_favs      : 0
+pending_total     : 26
+variable_paths    : 4003
+stability         : 88.45%
+bitmap_cvg        : 8.54%
+unique_crashes    : 0
+unique_hangs      : 25
+last_path         : 1630390929
+last_crash        : 0
+last_hang         : 1630369642
+execs_since_crash : 1109742932
+exec_timeout      : 1000
+slowest_exec_ms   : 0
+peak_rss_mb       : 0
+cpu_affinity      : -1
+edges_found       : 4356
+total_edges       : 50995
+var_byte_count    : 503
+havoc_expansion   : 5
+testcache_size    : 2094835
+testcache_count   : 1006
+testcache_evict   : 230853117
+afl_banner        : default
+afl_version       : ++3.15a
+target_mode       : persistent shmem_testcase deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -x ./afl++.dict -x /out/xml.dict -- /out/xml 2147483647
+
