@@ -1,0 +1,1893 @@
+++++ stats ++++
+
+
+ - - -  freetype2-2017-afl/  - - - 
+
+
+
+ ###  trial-1/  ### 
+start_time        : 1631174510
+last_update       : 1631260889
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 6152219
+execs_per_sec     : 232.03
+paths_total       : 5609
+paths_favored     : 609
+paths_found       : 5607
+paths_imported    : 0
+max_depth         : 16
+cur_path          : 5592
+pending_favs      : 17
+pending_total     : 4382
+variable_paths    : 2382
+stability         : 99.98%
+bitmap_cvg        : 6.90%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260868
+last_crash        : 0
+last_hang         : 1631195201
+execs_since_crash : 6152219
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 787
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-2/  ### 
+start_time        : 1631174562
+last_update       : 1631260949
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 5971485
+execs_per_sec     : 7923.73
+paths_total       : 5704
+paths_favored     : 574
+paths_found       : 5702
+paths_imported    : 0
+max_depth         : 10
+cur_path          : 5495
+pending_favs      : 76
+pending_total     : 4610
+variable_paths    : 2207
+stability         : 99.98%
+bitmap_cvg        : 6.91%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260948
+last_crash        : 0
+last_hang         : 1631179655
+execs_since_crash : 5971485
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 783
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-3/  ### 
+start_time        : 1631174400
+last_update       : 1631260793
+fuzzer_pid        : 13
+cycles_done       : 8
+execs_done        : 9363453
+execs_per_sec     : 54.30
+paths_total       : 6591
+paths_favored     : 619
+paths_found       : 6589
+paths_imported    : 0
+max_depth         : 25
+cur_path          : 2603
+pending_favs      : 2
+pending_total     : 4762
+variable_paths    : 2406
+stability         : 99.98%
+bitmap_cvg        : 7.21%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260660
+last_crash        : 0
+last_hang         : 1631205598
+execs_since_crash : 9363453
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 821
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-4/  ### 
+start_time        : 1631174394
+last_update       : 1631260753
+fuzzer_pid        : 17
+cycles_done       : 0
+execs_done        : 4074175
+execs_per_sec     : 3.05
+paths_total       : 4042
+paths_favored     : 565
+paths_found       : 4040
+paths_imported    : 0
+max_depth         : 7
+cur_path          : 3238
+pending_favs      : 207
+pending_total     : 3348
+variable_paths    : 1718
+stability         : 99.98%
+bitmap_cvg        : 6.57%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260745
+last_crash        : 0
+last_hang         : 1631181649
+execs_since_crash : 4074175
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 792
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-5/  ### 
+start_time        : 1631174405
+last_update       : 1631260769
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 4014232
+execs_per_sec     : 2.10
+paths_total       : 4239
+paths_favored     : 580
+paths_found       : 4237
+paths_imported    : 0
+max_depth         : 7
+cur_path          : 3381
+pending_favs      : 203
+pending_total     : 3537
+variable_paths    : 1653
+stability         : 99.98%
+bitmap_cvg        : 6.60%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260745
+last_crash        : 0
+last_hang         : 1631175681
+execs_since_crash : 4014232
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 699
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-6/  ### 
+start_time        : 1631174570
+last_update       : 1631260948
+fuzzer_pid        : 13
+cycles_done       : 13
+execs_done        : 11551876
+execs_per_sec     : 2408.54
+paths_total       : 7150
+paths_favored     : 625
+paths_found       : 7148
+paths_imported    : 0
+max_depth         : 30
+cur_path          : 5853
+pending_favs      : 2
+pending_total     : 4414
+variable_paths    : 2564
+stability         : 99.98%
+bitmap_cvg        : 7.31%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260943
+last_crash        : 0
+last_hang         : 1631226405
+execs_since_crash : 11551876
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 683
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-7/  ### 
+start_time        : 1631174403
+last_update       : 1631260802
+fuzzer_pid        : 13
+cycles_done       : 18
+execs_done        : 14346052
+execs_per_sec     : 103.98
+paths_total       : 7633
+paths_favored     : 674
+paths_found       : 7631
+paths_imported    : 0
+max_depth         : 30
+cur_path          : 7596
+pending_favs      : 12
+pending_total     : 4699
+variable_paths    : 2702
+stability         : 99.98%
+bitmap_cvg        : 7.46%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260798
+last_crash        : 0
+last_hang         : 1631183408
+execs_since_crash : 14346052
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 911
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-8/  ### 
+start_time        : 1631174412
+last_update       : 1631260768
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 4898048
+execs_per_sec     : 2.09
+paths_total       : 4664
+paths_favored     : 595
+paths_found       : 4662
+paths_imported    : 0
+max_depth         : 7
+cur_path          : 3922
+pending_favs      : 206
+pending_total     : 3845
+variable_paths    : 1696
+stability         : 99.98%
+bitmap_cvg        : 6.89%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260755
+last_crash        : 0
+last_hang         : 1631202738
+execs_since_crash : 4898048
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 986
+peak_rss_mb       : not available while afl is running
+
+
+
+ - - -  freetype2-2017-dark_dev/  - - - 
+
+
+
+ ###  trial-10/  ### 
+start_time        : 1631174501
+last_update       : 1631260893
+fuzzer_pid        : 14
+cycles_done       : 187
+execs_done        : 3504516
+edge_bad_finding   : 910
+edge_good_finding   : 1873
+input_bad_finding   : 101
+input_good_finding   : 3771
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 3874
+total_dark_exec   : 8429
+total_dark_time   : 0 days, 0 hrs, 0 min, 18 sec      
+execs_per_sec     : 447.20
+paths_total       : 3874
+paths_favored     : 567
+paths_found       : 3872
+paths_imported    : 0
+max_depth         : 10
+cur_path          : 3786
+pending_favs      : 509
+pending_total     : 3556
+variable_paths    : 1588
+stability         : 99.98%
+bitmap_cvg        : 6.74%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260874
+last_crash        : 0
+last_hang         : 1631174936
+execs_since_crash : 3504516
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 749
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-11/  ### 
+start_time        : 1631174403
+last_update       : 1631260771
+fuzzer_pid        : 13
+cycles_done       : 79
+execs_done        : 6867826
+edge_bad_finding   : 1061
+edge_good_finding   : 2264
+input_bad_finding   : 132
+input_good_finding   : 6156
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 6290
+total_dark_exec   : 11217
+total_dark_time   : 0 days, 0 hrs, 0 min, 26 sec      
+execs_per_sec     : 54.26
+paths_total       : 6290
+paths_favored     : 670
+paths_found       : 6288
+paths_imported    : 0
+max_depth         : 18
+cur_path          : 6192
+pending_favs      : 563
+pending_total     : 5695
+variable_paths    : 2410
+stability         : 99.98%
+bitmap_cvg        : 7.57%
+unique_crashes    : 0
+unique_hangs      : 0
+last_path         : 1631260627
+last_crash        : 0
+last_hang         : 0
+execs_since_crash : 6867826
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 315
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-12/  ### 
+start_time        : 1631174401
+last_update       : 1631260789
+fuzzer_pid        : 13
+cycles_done       : 83
+execs_done        : 6718759
+edge_bad_finding   : 1039
+edge_good_finding   : 2204
+input_bad_finding   : 122
+input_good_finding   : 6163
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 6287
+total_dark_exec   : 11187
+total_dark_time   : 0 days, 0 hrs, 0 min, 33 sec      
+execs_per_sec     : 100.83
+paths_total       : 6287
+paths_favored     : 643
+paths_found       : 6285
+paths_imported    : 0
+max_depth         : 25
+cur_path          : 6268
+pending_favs      : 534
+pending_total     : 5726
+variable_paths    : 2631
+stability         : 99.98%
+bitmap_cvg        : 7.44%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260763
+last_crash        : 0
+last_hang         : 1631203814
+execs_since_crash : 6718759
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 690
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-13/  ### 
+start_time        : 1631174551
+last_update       : 1631260890
+fuzzer_pid        : 13
+cycles_done       : 196
+execs_done        : 4548889
+edge_bad_finding   : 902
+edge_good_finding   : 1983
+input_bad_finding   : 110
+input_good_finding   : 4126
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4238
+total_dark_exec   : 8865
+total_dark_time   : 0 days, 0 hrs, 0 min, 27 sec      
+execs_per_sec     : 365.92
+paths_total       : 4238
+paths_favored     : 622
+paths_found       : 4236
+paths_imported    : 0
+max_depth         : 15
+cur_path          : 4207
+pending_favs      : 523
+pending_total     : 3824
+variable_paths    : 1745
+stability         : 99.98%
+bitmap_cvg        : 6.89%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260880
+last_crash        : 0
+last_hang         : 1631184956
+execs_since_crash : 4548889
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 816
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-14/  ### 
+start_time        : 1631174416
+last_update       : 1631260795
+fuzzer_pid        : 13
+cycles_done       : 336
+execs_done        : 6522049
+edge_bad_finding   : 1033
+edge_good_finding   : 2072
+input_bad_finding   : 118
+input_good_finding   : 5353
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5473
+total_dark_exec   : 10295
+total_dark_time   : 0 days, 0 hrs, 0 min, 27 sec      
+execs_per_sec     : 19.16
+paths_total       : 5473
+paths_favored     : 626
+paths_found       : 5471
+paths_imported    : 0
+max_depth         : 15
+cur_path          : 5366
+pending_favs      : 500
+pending_total     : 4828
+variable_paths    : 2242
+stability         : 99.98%
+bitmap_cvg        : 7.23%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260781
+last_crash        : 0
+last_hang         : 1631181678
+execs_since_crash : 6522049
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 691
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-15/  ### 
+start_time        : 1631174400
+last_update       : 1631260756
+fuzzer_pid        : 13
+cycles_done       : 155
+execs_done        : 3510933
+edge_bad_finding   : 963
+edge_good_finding   : 1958
+input_bad_finding   : 119
+input_good_finding   : 4691
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4812
+total_dark_exec   : 9438
+total_dark_time   : 0 days, 0 hrs, 0 min, 25 sec      
+execs_per_sec     : 6.13
+paths_total       : 4812
+paths_favored     : 612
+paths_found       : 4810
+paths_imported    : 0
+max_depth         : 14
+cur_path          : 3170
+pending_favs      : 562
+pending_total     : 4502
+variable_paths    : 1662
+stability         : 99.98%
+bitmap_cvg        : 6.95%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260755
+last_crash        : 0
+last_hang         : 1631213806
+execs_since_crash : 3510933
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 838
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-16/  ### 
+start_time        : 1631174469
+last_update       : 1631260812
+fuzzer_pid        : 14
+cycles_done       : 291
+execs_done        : 7693699
+edge_bad_finding   : 1071
+edge_good_finding   : 2239
+input_bad_finding   : 128
+input_good_finding   : 6105
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 6235
+total_dark_exec   : 11128
+total_dark_time   : 0 days, 0 hrs, 0 min, 28 sec      
+execs_per_sec     : 76.65
+paths_total       : 6235
+paths_favored     : 678
+paths_found       : 6233
+paths_imported    : 0
+max_depth         : 25
+cur_path          : 2457
+pending_favs      : 539
+pending_total     : 5518
+variable_paths    : 2393
+stability         : 99.98%
+bitmap_cvg        : 7.54%
+unique_crashes    : 0
+unique_hangs      : 0
+last_path         : 1631260808
+last_crash        : 0
+last_hang         : 0
+execs_since_crash : 7693699
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 664
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-9/  ### 
+start_time        : 1631174597
+last_update       : 1631260984
+fuzzer_pid        : 13
+cycles_done       : 224
+execs_done        : 7082427
+edge_bad_finding   : 1036
+edge_good_finding   : 2244
+input_bad_finding   : 127
+input_good_finding   : 5793
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5922
+total_dark_exec   : 10826
+total_dark_time   : 0 days, 0 hrs, 0 min, 29 sec      
+execs_per_sec     : 2391.98
+paths_total       : 5922
+paths_favored     : 683
+paths_found       : 5920
+paths_imported    : 0
+max_depth         : 18
+cur_path          : 5808
+pending_favs      : 542
+pending_total     : 5312
+variable_paths    : 2214
+stability         : 99.98%
+bitmap_cvg        : 7.50%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260979
+last_crash        : 0
+last_hang         : 1631214407
+execs_since_crash : 7082427
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 864
+peak_rss_mb       : not available while afl is running
+
+
+
+ - - -  freetype2-2017-dark_only_analysis/  - - - 
+
+
+
+ ###  trial-17/  ### 
+start_time        : 1631174395
+last_update       : 1631260754
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 3720062
+edge_bad_finding   : 853
+edge_good_finding   : 1873
+input_bad_finding   : 97
+input_good_finding   : 4190
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4289
+total_dark_exec   : 8713
+total_dark_time   : 0 days, 0 hrs, 0 min, 20 sec      
+execs_per_sec     : 0.72
+paths_total       : 4289
+paths_favored     : 561
+paths_found       : 4287
+paths_imported    : 0
+max_depth         : 7
+cur_path          : 3441
+pending_favs      : 222
+pending_total     : 3626
+variable_paths    : 1785
+stability         : 99.98%
+bitmap_cvg        : 6.65%
+unique_crashes    : 1
+unique_hangs      : 1
+last_path         : 1631260745
+last_crash        : 1631177871
+last_hang         : 1631224972
+execs_since_crash : 3587366
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 783
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-18/  ### 
+start_time        : 1631174400
+last_update       : 1631260776
+fuzzer_pid        : 13
+cycles_done       : 9
+execs_done        : 12281775
+edge_bad_finding   : 1082
+edge_good_finding   : 2284
+input_bad_finding   : 129
+input_good_finding   : 7333
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 7464
+total_dark_exec   : 12404
+total_dark_time   : 0 days, 0 hrs, 0 min, 28 sec      
+execs_per_sec     : 155.09
+paths_total       : 7464
+paths_favored     : 656
+paths_found       : 7462
+paths_imported    : 0
+max_depth         : 23
+cur_path          : 7455
+pending_favs      : 3
+pending_total     : 5199
+variable_paths    : 2607
+stability         : 99.98%
+bitmap_cvg        : 7.63%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260733
+last_crash        : 0
+last_hang         : 1631200842
+execs_since_crash : 12281775
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 807
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-19/  ### 
+start_time        : 1631174402
+last_update       : 1631260762
+fuzzer_pid        : 13
+cycles_done       : 13
+execs_done        : 11874068
+edge_bad_finding   : 1180
+edge_good_finding   : 2427
+input_bad_finding   : 144
+input_good_finding   : 7593
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 7739
+total_dark_exec   : 12910
+total_dark_time   : 0 days, 0 hrs, 0 min, 28 sec      
+execs_per_sec     : 111.92
+paths_total       : 7739
+paths_favored     : 731
+paths_found       : 7737
+paths_imported    : 0
+max_depth         : 27
+cur_path          : 1076
+pending_favs      : 0
+pending_total     : 5156
+variable_paths    : 2558
+stability         : 99.98%
+bitmap_cvg        : 8.00%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260426
+last_crash        : 0
+last_hang         : 1631200392
+execs_since_crash : 11874068
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 874
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-20/  ### 
+start_time        : 1631174412
+last_update       : 1631260753
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 4739108
+edge_bad_finding   : 949
+edge_good_finding   : 2048
+input_bad_finding   : 107
+input_good_finding   : 4917
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5026
+total_dark_exec   : 9647
+total_dark_time   : 0 days, 0 hrs, 0 min, 30 sec      
+execs_per_sec     : 3.10
+paths_total       : 5026
+paths_favored     : 600
+paths_found       : 5024
+paths_imported    : 0
+max_depth         : 7
+cur_path          : 4352
+pending_favs      : 176
+pending_total     : 4155
+variable_paths    : 1885
+stability         : 99.98%
+bitmap_cvg        : 7.06%
+unique_crashes    : 1
+unique_hangs      : 1
+last_path         : 1631260656
+last_crash        : 1631259724
+last_hang         : 1631174727
+execs_since_crash : 49627
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 734
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-21/  ### 
+start_time        : 1631174469
+last_update       : 1631260838
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 4585920
+edge_bad_finding   : 948
+edge_good_finding   : 2019
+input_bad_finding   : 114
+input_good_finding   : 4925
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5041
+total_dark_exec   : 9631
+total_dark_time   : 0 days, 0 hrs, 0 min, 24 sec      
+execs_per_sec     : 175.61
+paths_total       : 5041
+paths_favored     : 592
+paths_found       : 5039
+paths_imported    : 0
+max_depth         : 8
+cur_path          : 4497
+pending_favs      : 145
+pending_total     : 4096
+variable_paths    : 1759
+stability         : 99.98%
+bitmap_cvg        : 7.02%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260835
+last_crash        : 0
+last_hang         : 1631180089
+execs_since_crash : 4585920
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 642
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-22/  ### 
+start_time        : 1631174403
+last_update       : 1631260755
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 4540329
+edge_bad_finding   : 978
+edge_good_finding   : 1998
+input_bad_finding   : 105
+input_good_finding   : 4397
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4504
+total_dark_exec   : 9092
+total_dark_time   : 0 days, 0 hrs, 0 min, 18 sec      
+execs_per_sec     : 14.68
+paths_total       : 4504
+paths_favored     : 597
+paths_found       : 4502
+paths_imported    : 0
+max_depth         : 7
+cur_path          : 3635
+pending_favs      : 218
+pending_total     : 3730
+variable_paths    : 1679
+stability         : 99.98%
+bitmap_cvg        : 7.03%
+unique_crashes    : 0
+unique_hangs      : 0
+last_path         : 1631260749
+last_crash        : 0
+last_hang         : 0
+execs_since_crash : 4540329
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 569
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-23/  ### 
+start_time        : 1631174449
+last_update       : 1631260812
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 4569732
+edge_bad_finding   : 930
+edge_good_finding   : 2023
+input_bad_finding   : 102
+input_good_finding   : 4393
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4497
+total_dark_exec   : 9091
+total_dark_time   : 0 days, 0 hrs, 0 min, 25 sec      
+execs_per_sec     : 94.75
+paths_total       : 4497
+paths_favored     : 592
+paths_found       : 4495
+paths_imported    : 0
+max_depth         : 7
+cur_path          : 3695
+pending_favs      : 200
+pending_total     : 3703
+variable_paths    : 1770
+stability         : 99.98%
+bitmap_cvg        : 7.00%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260808
+last_crash        : 0
+last_hang         : 1631182005
+execs_since_crash : 4569732
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 964
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-24/  ### 
+start_time        : 1631174396
+last_update       : 1631260773
+fuzzer_pid        : 13
+cycles_done       : 0
+execs_done        : 3794096
+edge_bad_finding   : 868
+edge_good_finding   : 1945
+input_bad_finding   : 105
+input_good_finding   : 3990
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4097
+total_dark_exec   : 8601
+total_dark_time   : 0 days, 0 hrs, 0 min, 20 sec      
+execs_per_sec     : 25.00
+paths_total       : 4097
+paths_favored     : 582
+paths_found       : 4095
+paths_imported    : 0
+max_depth         : 7
+cur_path          : 3323
+pending_favs      : 207
+pending_total     : 3377
+variable_paths    : 1783
+stability         : 99.98%
+bitmap_cvg        : 6.78%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260543
+last_crash        : 0
+last_hang         : 1631184204
+execs_since_crash : 3794096
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 416
+peak_rss_mb       : not available while afl is running
+
+
+
+ - - -  freetype2-2017-dark_rf_u_wrs/  - - - 
+
+
+
+ ###  trial-25/  ### 
+start_time        : 1631174400
+last_update       : 1631260744
+fuzzer_pid        : 13
+cycles_done       : 86
+execs_done        : 5323528
+edge_bad_finding   : 1069
+edge_good_finding   : 2089
+input_bad_finding   : 104
+input_good_finding   : 5000
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5106
+total_dark_exec   : 9886
+total_dark_time   : 0 days, 0 hrs, 0 min, 24 sec      
+execs_per_sec     : 1.23
+paths_total       : 5106
+paths_favored     : 704
+paths_found       : 5104
+paths_imported    : 0
+max_depth         : 12
+cur_path          : 4345
+pending_favs      : 556
+pending_total     : 4586
+variable_paths    : 1668
+stability         : 99.98%
+bitmap_cvg        : 7.31%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260734
+last_crash        : 0
+last_hang         : 1631258014
+execs_since_crash : 5323528
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 865
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-26/  ### 
+start_time        : 1631174394
+last_update       : 1631260751
+fuzzer_pid        : 15
+cycles_done       : 29
+execs_done        : 3174020
+edge_bad_finding   : 973
+edge_good_finding   : 1991
+input_bad_finding   : 119
+input_good_finding   : 4824
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4945
+total_dark_exec   : 9598
+total_dark_time   : 0 days, 0 hrs, 0 min, 28 sec      
+execs_per_sec     : 5.59
+paths_total       : 4945
+paths_favored     : 719
+paths_found       : 4943
+paths_imported    : 0
+max_depth         : 14
+cur_path          : 2352
+pending_favs      : 657
+pending_total     : 4702
+variable_paths    : 1715
+stability         : 99.98%
+bitmap_cvg        : 7.01%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260695
+last_crash        : 0
+last_hang         : 1631176957
+execs_since_crash : 3174020
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 769
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-27/  ### 
+start_time        : 1631174402
+last_update       : 1631260764
+fuzzer_pid        : 13
+cycles_done       : 91
+execs_done        : 6835204
+edge_bad_finding   : 1058
+edge_good_finding   : 2186
+input_bad_finding   : 148
+input_good_finding   : 5435
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5585
+total_dark_exec   : 10413
+total_dark_time   : 0 days, 0 hrs, 0 min, 26 sec      
+execs_per_sec     : 60.57
+paths_total       : 5585
+paths_favored     : 788
+paths_found       : 5583
+paths_imported    : 0
+max_depth         : 15
+cur_path          : 3342
+pending_favs      : 641
+pending_total     : 5007
+variable_paths    : 2424
+stability         : 99.98%
+bitmap_cvg        : 7.44%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260619
+last_crash        : 0
+last_hang         : 1631233415
+execs_since_crash : 6835204
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 749
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-28/  ### 
+start_time        : 1631174409
+last_update       : 1631260802
+fuzzer_pid        : 14
+cycles_done       : 164
+execs_done        : 8547226
+edge_bad_finding   : 1166
+edge_good_finding   : 2267
+input_bad_finding   : 126
+input_good_finding   : 5914
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 6042
+total_dark_exec   : 11092
+total_dark_time   : 0 days, 0 hrs, 0 min, 26 sec      
+execs_per_sec     : 11.98
+paths_total       : 6042
+paths_favored     : 786
+paths_found       : 6040
+paths_imported    : 0
+max_depth         : 15
+cur_path          : 5874
+pending_favs      : 533
+pending_total     : 5095
+variable_paths    : 2300
+stability         : 99.98%
+bitmap_cvg        : 7.73%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260755
+last_crash        : 0
+last_hang         : 1631194058
+execs_since_crash : 8547226
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 986
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-29/  ### 
+start_time        : 1631174403
+last_update       : 1631260762
+fuzzer_pid        : 13
+cycles_done       : 95
+execs_done        : 6341108
+edge_bad_finding   : 931
+edge_good_finding   : 2033
+input_bad_finding   : 130
+input_good_finding   : 5487
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5619
+total_dark_exec   : 10295
+total_dark_time   : 0 days, 0 hrs, 0 min, 28 sec      
+execs_per_sec     : 16.17
+paths_total       : 5619
+paths_favored     : 754
+paths_found       : 5617
+paths_imported    : 0
+max_depth         : 15
+cur_path          : 2095
+pending_favs      : 602
+pending_total     : 4994
+variable_paths    : 2488
+stability         : 99.93%
+bitmap_cvg        : 7.01%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260695
+last_crash        : 0
+last_hang         : 1631182188
+execs_since_crash : 6341108
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 835
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-30/  ### 
+start_time        : 1631174403
+last_update       : 1631260801
+fuzzer_pid        : 13
+cycles_done       : 88
+execs_done        : 6618983
+edge_bad_finding   : 1040
+edge_good_finding   : 2144
+input_bad_finding   : 116
+input_good_finding   : 5491
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5609
+total_dark_exec   : 10403
+total_dark_time   : 0 days, 0 hrs, 0 min, 23 sec      
+execs_per_sec     : 62.36
+paths_total       : 5609
+paths_favored     : 776
+paths_found       : 5607
+paths_imported    : 0
+max_depth         : 14
+cur_path          : 4767
+pending_favs      : 603
+pending_total     : 4982
+variable_paths    : 2258
+stability         : 99.98%
+bitmap_cvg        : 7.35%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260755
+last_crash        : 0
+last_hang         : 1631182363
+execs_since_crash : 6618983
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 986
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-31/  ### 
+start_time        : 1631174395
+last_update       : 1631260754
+fuzzer_pid        : 13
+cycles_done       : 27
+execs_done        : 3355868
+edge_bad_finding   : 996
+edge_good_finding   : 1934
+input_bad_finding   : 108
+input_good_finding   : 3860
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 3970
+total_dark_exec   : 8591
+total_dark_time   : 0 days, 0 hrs, 0 min, 20 sec      
+execs_per_sec     : 2.71
+paths_total       : 3970
+paths_favored     : 734
+paths_found       : 3968
+paths_imported    : 0
+max_depth         : 11
+cur_path          : 3206
+pending_favs      : 666
+pending_total     : 3711
+variable_paths    : 994
+stability         : 99.98%
+bitmap_cvg        : 6.96%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260637
+last_crash        : 0
+last_hang         : 1631228402
+execs_since_crash : 3355868
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 571
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-32/  ### 
+start_time        : 1631174412
+last_update       : 1631260768
+fuzzer_pid        : 14
+cycles_done       : 85
+execs_done        : 6969220
+edge_bad_finding   : 1198
+edge_good_finding   : 2309
+input_bad_finding   : 130
+input_good_finding   : 5334
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5466
+total_dark_exec   : 10590
+total_dark_time   : 0 days, 0 hrs, 0 min, 22 sec      
+execs_per_sec     : 0.98
+paths_total       : 5466
+paths_favored     : 809
+paths_found       : 5464
+paths_imported    : 0
+max_depth         : 18
+cur_path          : 3777
+pending_favs      : 629
+pending_total     : 4802
+variable_paths    : 2163
+stability         : 99.98%
+bitmap_cvg        : 7.84%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260720
+last_crash        : 0
+last_hang         : 1631178908
+execs_since_crash : 6969220
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 889
+peak_rss_mb       : not available while afl is running
+
+
+
+ - - -  freetype2-2017-dark_wrs_rf_rp/  - - - 
+
+
+
+ ###  trial-33/  ### 
+start_time        : 1631174400
+last_update       : 1631260752
+fuzzer_pid        : 13
+cycles_done       : 90
+execs_done        : 6346341
+edge_bad_finding   : 1054
+edge_good_finding   : 2147
+input_bad_finding   : 126
+input_good_finding   : 5433
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5561
+total_dark_exec   : 10437
+total_dark_time   : 0 days, 0 hrs, 0 min, 27 sec      
+execs_per_sec     : 78.79
+paths_total       : 5561
+paths_favored     : 771
+paths_found       : 5559
+paths_imported    : 0
+max_depth         : 17
+cur_path          : 1773
+pending_favs      : 617
+pending_total     : 4947
+variable_paths    : 2211
+stability         : 99.98%
+bitmap_cvg        : 7.38%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260352
+last_crash        : 0
+last_hang         : 1631175831
+execs_since_crash : 6346341
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 891
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-34/  ### 
+start_time        : 1631174400
+last_update       : 1631260773
+fuzzer_pid        : 13
+cycles_done       : 80
+execs_done        : 5975566
+edge_bad_finding   : 984
+edge_good_finding   : 2103
+input_bad_finding   : 133
+input_good_finding   : 5399
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5534
+total_dark_exec   : 10316
+total_dark_time   : 0 days, 0 hrs, 0 min, 20 sec      
+execs_per_sec     : 26.73
+paths_total       : 5534
+paths_favored     : 764
+paths_found       : 5532
+paths_imported    : 0
+max_depth         : 16
+cur_path          : 5074
+pending_favs      : 613
+pending_total     : 4984
+variable_paths    : 2448
+stability         : 99.98%
+bitmap_cvg        : 7.20%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260606
+last_crash        : 0
+last_hang         : 1631195038
+execs_since_crash : 5975566
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 792
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-35/  ### 
+start_time        : 1631174400
+last_update       : 1631260789
+fuzzer_pid        : 13
+cycles_done       : 136
+execs_done        : 8092431
+edge_bad_finding   : 1059
+edge_good_finding   : 2183
+input_bad_finding   : 125
+input_good_finding   : 5665
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5792
+total_dark_exec   : 10658
+total_dark_time   : 0 days, 0 hrs, 0 min, 22 sec      
+execs_per_sec     : 38.49
+paths_total       : 5792
+paths_favored     : 801
+paths_found       : 5790
+paths_imported    : 0
+max_depth         : 17
+cur_path          : 5486
+pending_favs      : 578
+pending_total     : 4923
+variable_paths    : 2149
+stability         : 99.98%
+bitmap_cvg        : 7.44%
+unique_crashes    : 0
+unique_hangs      : 0
+last_path         : 1631260781
+last_crash        : 0
+last_hang         : 0
+execs_since_crash : 8092431
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 765
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-36/  ### 
+start_time        : 1631174402
+last_update       : 1631260763
+fuzzer_pid        : 13
+cycles_done       : 35
+execs_done        : 4128708
+edge_bad_finding   : 922
+edge_good_finding   : 2045
+input_bad_finding   : 101
+input_good_finding   : 4314
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4417
+total_dark_exec   : 9081
+total_dark_time   : 0 days, 0 hrs, 0 min, 22 sec      
+execs_per_sec     : 4.04
+paths_total       : 4417
+paths_favored     : 751
+paths_found       : 4415
+paths_imported    : 0
+max_depth         : 11
+cur_path          : 2644
+pending_favs      : 651
+pending_total     : 4092
+variable_paths    : 1971
+stability         : 99.98%
+bitmap_cvg        : 7.02%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260542
+last_crash        : 0
+last_hang         : 1631213806
+execs_since_crash : 4128708
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 735
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-37/  ### 
+start_time        : 1631174396
+last_update       : 1631260733
+fuzzer_pid        : 13
+cycles_done       : 65
+execs_done        : 5720001
+edge_bad_finding   : 1066
+edge_good_finding   : 2138
+input_bad_finding   : 135
+input_good_finding   : 5500
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5637
+total_dark_exec   : 10467
+total_dark_time   : 0 days, 0 hrs, 0 min, 28 sec      
+execs_per_sec     : 47.50
+paths_total       : 5637
+paths_favored     : 733
+paths_found       : 5635
+paths_imported    : 0
+max_depth         : 17
+cur_path          : 5167
+pending_favs      : 598
+pending_total     : 5069
+variable_paths    : 2310
+stability         : 99.98%
+bitmap_cvg        : 7.38%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260705
+last_crash        : 0
+last_hang         : 1631183118
+execs_since_crash : 5720001
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 935
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-38/  ### 
+start_time        : 1631174449
+last_update       : 1631260839
+fuzzer_pid        : 13
+cycles_done       : 21
+execs_done        : 2791195
+edge_bad_finding   : 953
+edge_good_finding   : 1940
+input_bad_finding   : 104
+input_good_finding   : 3789
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 3895
+total_dark_exec   : 8512
+total_dark_time   : 0 days, 0 hrs, 0 min, 21 sec      
+execs_per_sec     : 146.53
+paths_total       : 3895
+paths_favored     : 718
+paths_found       : 3893
+paths_imported    : 0
+max_depth         : 11
+cur_path          : 1841
+pending_favs      : 664
+pending_total     : 3686
+variable_paths    : 1532
+stability         : 99.98%
+bitmap_cvg        : 6.91%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260816
+last_crash        : 0
+last_hang         : 1631190406
+execs_since_crash : 2791195
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 733
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-39/  ### 
+start_time        : 1631174433
+last_update       : 1631260795
+fuzzer_pid        : 13
+cycles_done       : 44
+execs_done        : 4196962
+edge_bad_finding   : 1040
+edge_good_finding   : 2126
+input_bad_finding   : 117
+input_good_finding   : 4764
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4883
+total_dark_exec   : 9716
+total_dark_time   : 0 days, 0 hrs, 0 min, 27 sec      
+execs_per_sec     : 42.65
+paths_total       : 4883
+paths_favored     : 748
+paths_found       : 4881
+paths_imported    : 0
+max_depth         : 12
+cur_path          : 3167
+pending_favs      : 642
+pending_total     : 4499
+variable_paths    : 1972
+stability         : 99.98%
+bitmap_cvg        : 7.32%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260793
+last_crash        : 0
+last_hang         : 1631191053
+execs_since_crash : 4196962
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 807
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-40/  ### 
+start_time        : 1631174587
+last_update       : 1631260937
+fuzzer_pid        : 13
+cycles_done       : 27
+execs_done        : 2802370
+edge_bad_finding   : 903
+edge_good_finding   : 1923
+input_bad_finding   : 99
+input_good_finding   : 3875
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 3976
+total_dark_exec   : 8561
+total_dark_time   : 0 days, 0 hrs, 0 min, 19 sec      
+execs_per_sec     : 4228.47
+paths_total       : 3976
+paths_favored     : 707
+paths_found       : 3974
+paths_imported    : 0
+max_depth         : 12
+cur_path          : 3680
+pending_favs      : 646
+pending_total     : 3763
+variable_paths    : 1915
+stability         : 99.98%
+bitmap_cvg        : 6.80%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260936
+last_crash        : 0
+last_hang         : 1631177001
+execs_since_crash : 2802370
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 988
+peak_rss_mb       : not available while afl is running
+
+
+
+ - - -  freetype2-2017-dark_wrs_rp/  - - - 
+
+
+
+ ###  trial-41/  ### 
+start_time        : 1631174396
+last_update       : 1631260795
+fuzzer_pid        : 13
+cycles_done       : 37
+execs_done        : 3065787
+edge_bad_finding   : 907
+edge_good_finding   : 1844
+input_bad_finding   : 89
+input_good_finding   : 3902
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 3993
+total_dark_exec   : 8519
+total_dark_time   : 0 days, 0 hrs, 0 min, 22 sec      
+execs_per_sec     : 5.10
+paths_total       : 3993
+paths_favored     : 0
+paths_found       : 3991
+paths_imported    : 0
+max_depth         : 10
+cur_path          : 2238
+pending_favs      : 0
+pending_total     : 3749
+variable_paths    : 1009
+stability         : 99.98%
+bitmap_cvg        : 6.69%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260642
+last_crash        : 0
+last_hang         : 1631218504
+execs_since_crash : 3065787
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 609
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-42/  ### 
+start_time        : 1631174407
+last_update       : 1631260770
+fuzzer_pid        : 14
+cycles_done       : 93
+execs_done        : 6273668
+edge_bad_finding   : 932
+edge_good_finding   : 2066
+input_bad_finding   : 114
+input_good_finding   : 4937
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5053
+total_dark_exec   : 9755
+total_dark_time   : 0 days, 0 hrs, 0 min, 24 sec      
+execs_per_sec     : 865.00
+paths_total       : 5053
+paths_favored     : 0
+paths_found       : 5051
+paths_imported    : 0
+max_depth         : 13
+cur_path          : 2449
+pending_favs      : 0
+pending_total     : 4420
+variable_paths    : 2157
+stability         : 99.98%
+bitmap_cvg        : 7.07%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260409
+last_crash        : 0
+last_hang         : 1631181505
+execs_since_crash : 6273668
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 986
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-43/  ### 
+start_time        : 1631174394
+last_update       : 1631260738
+fuzzer_pid        : 14
+cycles_done       : 50
+execs_done        : 2902781
+edge_bad_finding   : 621
+edge_good_finding   : 1255
+input_bad_finding   : 51
+input_good_finding   : 3201
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 3254
+total_dark_exec   : 6893
+total_dark_time   : 0 days, 0 hrs, 0 min, 21 sec      
+execs_per_sec     : 3.23
+paths_total       : 3254
+paths_favored     : 0
+paths_found       : 3252
+paths_imported    : 0
+max_depth         : 13
+cur_path          : 1945
+pending_favs      : 0
+pending_total     : 3020
+variable_paths    : 2
+stability         : 99.97%
+bitmap_cvg        : 5.35%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260639
+last_crash        : 0
+last_hang         : 1631196860
+execs_since_crash : 2902781
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 746
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-44/  ### 
+start_time        : 1631174472
+last_update       : 1631260863
+fuzzer_pid        : 13
+cycles_done       : 49
+execs_done        : 3450163
+edge_bad_finding   : 913
+edge_good_finding   : 1894
+input_bad_finding   : 119
+input_good_finding   : 4310
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 4431
+total_dark_exec   : 9022
+total_dark_time   : 0 days, 0 hrs, 0 min, 29 sec      
+execs_per_sec     : 110.60
+paths_total       : 4431
+paths_favored     : 0
+paths_found       : 4429
+paths_imported    : 0
+max_depth         : 13
+cur_path          : 4326
+pending_favs      : 0
+pending_total     : 4127
+variable_paths    : 2095
+stability         : 99.98%
+bitmap_cvg        : 6.77%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260862
+last_crash        : 0
+last_hang         : 1631181392
+execs_since_crash : 3450163
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 823
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-45/  ### 
+start_time        : 1631174395
+last_update       : 1631260778
+fuzzer_pid        : 13
+cycles_done       : 45
+execs_done        : 3321765
+edge_bad_finding   : 919
+edge_good_finding   : 1801
+input_bad_finding   : 80
+input_good_finding   : 3706
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 3788
+total_dark_exec   : 8331
+total_dark_time   : 0 days, 0 hrs, 0 min, 23 sec      
+execs_per_sec     : 29.88
+paths_total       : 3788
+paths_favored     : 0
+paths_found       : 3786
+paths_imported    : 0
+max_depth         : 10
+cur_path          : 2197
+pending_favs      : 0
+pending_total     : 3533
+variable_paths    : 1807
+stability         : 99.98%
+bitmap_cvg        : 6.64%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260696
+last_crash        : 0
+last_hang         : 1631194087
+execs_since_crash : 3321765
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 886
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-46/  ### 
+start_time        : 1631174539
+last_update       : 1631260937
+fuzzer_pid        : 13
+cycles_done       : 126
+execs_done        : 7987084
+edge_bad_finding   : 1049
+edge_good_finding   : 2136
+input_bad_finding   : 114
+input_good_finding   : 5170
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5286
+total_dark_exec   : 10180
+total_dark_time   : 0 days, 0 hrs, 0 min, 25 sec      
+execs_per_sec     : 2719.86
+paths_total       : 5286
+paths_favored     : 0
+paths_found       : 5284
+paths_imported    : 0
+max_depth         : 14
+cur_path          : 3174
+pending_favs      : 0
+pending_total     : 4421
+variable_paths    : 2564
+stability         : 99.98%
+bitmap_cvg        : 7.35%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260934
+last_crash        : 0
+last_hang         : 1631176850
+execs_since_crash : 7987084
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 943
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-47/  ### 
+start_time        : 1631174412
+last_update       : 1631260755
+fuzzer_pid        : 13
+cycles_done       : 93
+execs_done        : 6763067
+edge_bad_finding   : 1069
+edge_good_finding   : 2158
+input_bad_finding   : 102
+input_good_finding   : 5206
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 5310
+total_dark_exec   : 10188
+total_dark_time   : 0 days, 0 hrs, 0 min, 28 sec      
+execs_per_sec     : 7.94
+paths_total       : 5310
+paths_favored     : 0
+paths_found       : 5308
+paths_imported    : 0
+max_depth         : 16
+cur_path          : 5115
+pending_favs      : 0
+pending_total     : 4709
+variable_paths    : 2605
+stability         : 99.92%
+bitmap_cvg        : 7.42%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260705
+last_crash        : 0
+last_hang         : 1631193311
+execs_since_crash : 6763067
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 808
+peak_rss_mb       : not available while afl is running
+
+ ###  trial-48/  ### 
+start_time        : 1631174396
+last_update       : 1631260773
+fuzzer_pid        : 13
+cycles_done       : 52
+execs_done        : 3451444
+edge_bad_finding   : 972
+edge_good_finding   : 1933
+input_bad_finding   : 107
+input_good_finding   : 3706
+timeout_dark_analysis   : 0
+inputs_run_dark_analysis   : 3815
+total_dark_exec   : 8456
+total_dark_time   : 0 days, 0 hrs, 0 min, 22 sec      
+execs_per_sec     : 33.33
+paths_total       : 3815
+paths_favored     : 0
+paths_found       : 3813
+paths_imported    : 0
+max_depth         : 14
+cur_path          : 2755
+pending_favs      : 0
+pending_total     : 3517
+variable_paths    : 1522
+stability         : 99.98%
+bitmap_cvg        : 6.92%
+unique_crashes    : 0
+unique_hangs      : 1
+last_path         : 1631260664
+last_crash        : 0
+last_hang         : 1631186945
+execs_since_crash : 3451444
+exec_timeout      : 1000
+afl_banner        : ftfuzzer
+afl_version       : 2.57b
+target_mode       : persistent deferred 
+command_line      : ./afl-fuzz -i /out/seeds -o /out/corpus -m none -t 1000+ -d -D -- /out/ftfuzzer 2147483647
+slowest_exec_ms   : 961
+peak_rss_mb       : not available while afl is running
+
