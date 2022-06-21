@@ -17,5 +17,5 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   bar:
     runs-on: ubuntu-latest
-      steps:
-        - run: echo "hello from bar!"
+    steps:
+      - run: echo "hello from bar!"
