@@ -1,0 +1,34 @@
+<style>table, th, td {border: 1px solid black;}</style><h1>Experiment result</h1>
+<h3>Critical difference </h3>
+<img src="./critical_difference.svg"/>
+
+<h3>Micro-benchmark Critical difference </h3>
+<img src="./micro_critical_difference.svg"/>
+<table><thead><tr><th>Fuzzer</th><th>Rank</th></tr></thead><tr><td>libfuzzer</td><td>1.46</td></tr><tr><td>aflplusplus</td><td>1.47</td></tr></table>
+<h1>Overall (ranking by edges covered)</h1>
+<ul><li> aflplusplus (36,885 edges covered), success rate: 15.00%(30/200 pairs) </li><li> libfuzzer (31,288 edges covered), success rate: 13.00%(26/200 pairs) </li></ul>
+<img style="max-width:800px" src="./overall-logscale.svg"/><img style="max-width:800px" src="./overall.svg"/>
+
+
+
+<img style="max-width:500px"  src="./overall-mann_whitney_plot.svg"/>
+
+
+
+
+<h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> bloaty_fuzz_target </h2>
+<h4 style='font-weight: bold'>Ranking </h4>
+<ol><li> libfuzzer, (13,657 edges covered), success rate: 13.00%(13/100 pairs) </li><li> aflplusplus, (10,824 edges covered), success rate: 11.00%(11/100 pairs) </li></ol>
+<img style="max-width:800px" src="./bloaty_fuzz_target-logscale.cactus.svg"/> <img style="max-width:800px" src="./bloaty_fuzz_target.cactus.svg"/> 
+
+
+ <h2> Mann-Whitney U test </h2>
+ <img style="max-width:600px" src="./bloaty_fuzz_target-mann_whitney_plot.svg"/>
+<h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> freetype2-2017 </h2>
+<h4 style='font-weight: bold'>Ranking </h4>
+<ol><li> aflplusplus, (26,061 edges covered), success rate: 19.00%(19/100 pairs) </li><li> libfuzzer, (17,631 edges covered), success rate: 13.00%(13/100 pairs) </li></ol>
+<img style="max-width:800px" src="./freetype2-2017-logscale.cactus.svg"/> <img style="max-width:800px" src="./freetype2-2017.cactus.svg"/> 
+
+
+ <h2> Mann-Whitney U test </h2>
+ <img style="max-width:600px" src="./freetype2-2017-mann_whitney_plot.svg"/>
