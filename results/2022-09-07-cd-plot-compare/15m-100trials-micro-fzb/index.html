@@ -4,9 +4,9 @@
 
 <h3>Micro-benchmark Critical difference </h3>
 <img src="./micro_critical_difference.svg"/>
-<table><thead><tr><th>Fuzzer</th><th>Rank</th></tr></thead><tr><td>honggfuzz</td><td>2.20</td></tr><tr><td>aflplusplus</td><td>2.32</td></tr><tr><td>afl</td><td>2.61</td></tr><tr><td>entropic</td><td>2.61</td></tr><tr><td>eclipser</td><td>2.69</td></tr><tr><td>libfuzzer</td><td>2.81</td></tr></table>
+<table><thead><tr><th>Fuzzer</th><th>Rank</th></tr></thead><tr><td>honggfuzz</td><td>2.23</td></tr><tr><td>aflplusplus</td><td>2.29</td></tr><tr><td>afl</td><td>2.58</td></tr><tr><td>entropic</td><td>2.58</td></tr><tr><td>eclipser</td><td>2.69</td></tr><tr><td>libfuzzer</td><td>2.83</td></tr></table>
 <h1>Overall (ranking by edges covered)</h1>
-<ul><li> honggfuzz (227,826 edges covered), success rate: 40.79%(421/1032 pairs) </li><li> aflplusplus (223,819 edges covered), success rate: 41.18%(425/1032 pairs) </li><li> afl (216,468 edges covered), success rate: 40.21%(415/1032 pairs) </li><li> eclipser (214,384 edges covered), success rate: 40.21%(415/1032 pairs) </li><li> entropic (209,537 edges covered), success rate: 40.02%(413/1032 pairs) </li><li> libfuzzer (203,379 edges covered), success rate: 37.60%(388/1032 pairs) </li></ul>
+<ul><li> honggfuzz (393,579 edges covered), success rate: 40.90%(787/1924 pairs) </li><li> aflplusplus (388,142 edges covered), success rate: 41.94%(807/1924 pairs) </li><li> eclipser (373,447 edges covered), success rate: 39.50%(760/1924 pairs) </li><li> afl (373,027 edges covered), success rate: 40.54%(780/1924 pairs) </li><li> entropic (366,796 edges covered), success rate: 40.44%(778/1924 pairs) </li><li> libfuzzer (354,804 edges covered), success rate: 37.89%(729/1924 pairs) </li></ul>
 <img style="max-width:800px" src="./overall-logscale.svg"/><img style="max-width:800px" src="./overall.svg"/>
 
 
@@ -18,7 +18,7 @@
 
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> bloaty_fuzz_target </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> afl, (10,104 edges covered), success rate: 9.80%(5/51 pairs) </li><li> eclipser, (9,855 edges covered), success rate: 13.73%(7/51 pairs) </li><li> honggfuzz, (9,534 edges covered), success rate: 15.69%(8/51 pairs) </li><li> entropic, (7,743 edges covered), success rate: 9.80%(5/51 pairs) </li><li> aflplusplus, (7,625 edges covered), success rate: 7.84%(4/51 pairs) </li><li> libfuzzer, (7,124 edges covered), success rate: 9.80%(5/51 pairs) </li></ol>
+<ol><li> eclipser, (17,045 edges covered), success rate: 15.46%(15/97 pairs) </li><li> honggfuzz, (15,424 edges covered), success rate: 19.59%(19/97 pairs) </li><li> afl, (15,179 edges covered), success rate: 17.53%(17/97 pairs) </li><li> entropic, (13,588 edges covered), success rate: 15.46%(15/97 pairs) </li><li> libfuzzer, (12,286 edges covered), success rate: 11.34%(11/97 pairs) </li><li> aflplusplus, (11,518 edges covered), success rate: 13.40%(13/97 pairs) </li></ol>
 <img style="max-width:800px" src="./bloaty_fuzz_target-logscale.cactus.svg"/> <img style="max-width:800px" src="./bloaty_fuzz_target.cactus.svg"/> 
 
 
@@ -26,7 +26,7 @@
  <img style="max-width:600px" src="./bloaty_fuzz_target-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> curl_curl_fuzzer_http </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (16,635 edges covered), success rate: 18.00%(9/50 pairs) </li><li> honggfuzz, (15,045 edges covered), success rate: 16.00%(8/50 pairs) </li><li> afl, (14,108 edges covered), success rate: 10.00%(5/50 pairs) </li><li> entropic, (13,853 edges covered), success rate: 16.00%(8/50 pairs) </li><li> eclipser, (13,660 edges covered), success rate: 8.00%(4/50 pairs) </li><li> libfuzzer, (13,210 edges covered), success rate: 6.00%(3/50 pairs) </li></ol>
+<ol><li> aflplusplus, (29,129 edges covered), success rate: 16.49%(16/97 pairs) </li><li> honggfuzz, (27,184 edges covered), success rate: 16.49%(16/97 pairs) </li><li> afl, (26,248 edges covered), success rate: 9.28%(9/97 pairs) </li><li> eclipser, (26,080 edges covered), success rate: 7.22%(7/97 pairs) </li><li> entropic, (25,754 edges covered), success rate: 14.43%(14/97 pairs) </li><li> libfuzzer, (24,395 edges covered), success rate: 8.25%(8/97 pairs) </li></ol>
 <img style="max-width:800px" src="./curl_curl_fuzzer_http-logscale.cactus.svg"/> <img style="max-width:800px" src="./curl_curl_fuzzer_http.cactus.svg"/> 
 
 
@@ -34,7 +34,7 @@
  <img style="max-width:600px" src="./curl_curl_fuzzer_http-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> freetype2-2017 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> honggfuzz, (18,190 edges covered), success rate: 20.37%(11/54 pairs) </li><li> aflplusplus, (14,605 edges covered), success rate: 12.96%(7/54 pairs) </li><li> afl, (13,561 edges covered), success rate: 12.96%(7/54 pairs) </li><li> eclipser, (13,544 edges covered), success rate: 18.52%(10/54 pairs) </li><li> entropic, (10,756 edges covered), success rate: 12.96%(7/54 pairs) </li><li> libfuzzer, (10,237 edges covered), success rate: 12.96%(7/54 pairs) </li></ol>
+<ol><li> honggfuzz, (29,081 edges covered), success rate: 23.16%(22/95 pairs) </li><li> aflplusplus, (23,488 edges covered), success rate: 11.58%(11/95 pairs) </li><li> eclipser, (21,617 edges covered), success rate: 16.84%(16/95 pairs) </li><li> afl, (21,193 edges covered), success rate: 11.58%(11/95 pairs) </li><li> entropic, (18,698 edges covered), success rate: 12.63%(12/95 pairs) </li><li> libfuzzer, (18,128 edges covered), success rate: 12.63%(12/95 pairs) </li></ol>
 <img style="max-width:800px" src="./freetype2-2017-logscale.cactus.svg"/> <img style="max-width:800px" src="./freetype2-2017.cactus.svg"/> 
 
 
@@ -42,7 +42,7 @@
  <img style="max-width:600px" src="./freetype2-2017-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> harfbuzz-1.3.2 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> honggfuzz, (10,406 edges covered), success rate: 23.40%(11/47 pairs) </li><li> aflplusplus, (10,293 edges covered), success rate: 23.40%(11/47 pairs) </li><li> afl, (8,441 edges covered), success rate: 29.79%(14/47 pairs) </li><li> eclipser, (8,391 edges covered), success rate: 29.79%(14/47 pairs) </li><li> entropic, (7,670 edges covered), success rate: 25.53%(12/47 pairs) </li><li> libfuzzer, (7,583 edges covered), success rate: 25.53%(12/47 pairs) </li></ol>
+<ol><li> aflplusplus, (23,819 edges covered), success rate: 20.21%(19/94 pairs) </li><li> honggfuzz, (23,788 edges covered), success rate: 20.21%(19/94 pairs) </li><li> eclipser, (19,817 edges covered), success rate: 24.47%(23/94 pairs) </li><li> afl, (19,273 edges covered), success rate: 24.47%(23/94 pairs) </li><li> entropic, (17,912 edges covered), success rate: 21.28%(20/94 pairs) </li><li> libfuzzer, (17,698 edges covered), success rate: 23.40%(22/94 pairs) </li></ol>
 <img style="max-width:800px" src="./harfbuzz-1.3.2-logscale.cactus.svg"/> <img style="max-width:800px" src="./harfbuzz-1.3.2.cactus.svg"/> 
 
 
@@ -50,7 +50,7 @@
  <img style="max-width:600px" src="./harfbuzz-1.3.2-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> jsoncpp_jsoncpp_fuzzer </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> honggfuzz, (2,201 edges covered), success rate: 100.00%(54/54 pairs) </li><li> eclipser, (2,201 edges covered), success rate: 100.00%(54/54 pairs) </li><li> entropic, (2,201 edges covered), success rate: 100.00%(54/54 pairs) </li><li> afl, (2,201 edges covered), success rate: 100.00%(54/54 pairs) </li><li> libfuzzer, (2,199 edges covered), success rate: 98.15%(53/54 pairs) </li><li> aflplusplus, (2,185 edges covered), success rate: 92.59%(50/54 pairs) </li></ol>
+<ol><li> honggfuzz, (4,228 edges covered), success rate: 100.00%(98/98 pairs) </li><li> afl, (4,228 edges covered), success rate: 100.00%(98/98 pairs) </li><li> entropic, (4,228 edges covered), success rate: 100.00%(98/98 pairs) </li><li> eclipser, (4,227 edges covered), success rate: 98.98%(97/98 pairs) </li><li> libfuzzer, (4,224 edges covered), success rate: 97.96%(96/98 pairs) </li><li> aflplusplus, (4,175 edges covered), success rate: 93.88%(92/98 pairs) </li></ol>
 <img style="max-width:800px" src="./jsoncpp_jsoncpp_fuzzer-logscale.cactus.svg"/> <img style="max-width:800px" src="./jsoncpp_jsoncpp_fuzzer.cactus.svg"/> 
 
 
@@ -58,7 +58,7 @@
  <img style="max-width:600px" src="./jsoncpp_jsoncpp_fuzzer-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> lcms-2017-03-21 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (5,833 edges covered), success rate: 27.59%(16/58 pairs) </li><li> honggfuzz, (5,273 edges covered), success rate: 36.21%(21/58 pairs) </li><li> eclipser, (4,508 edges covered), success rate: 34.48%(20/58 pairs) </li><li> afl, (4,327 edges covered), success rate: 36.21%(21/58 pairs) </li><li> entropic, (4,252 edges covered), success rate: 29.31%(17/58 pairs) </li><li> libfuzzer, (3,755 edges covered), success rate: 27.59%(16/58 pairs) </li></ol>
+<ol><li> aflplusplus, (10,734 edges covered), success rate: 32.63%(31/95 pairs) </li><li> honggfuzz, (9,463 edges covered), success rate: 37.89%(36/95 pairs) </li><li> eclipser, (8,630 edges covered), success rate: 35.79%(34/95 pairs) </li><li> afl, (8,531 edges covered), success rate: 40.00%(38/95 pairs) </li><li> entropic, (8,131 edges covered), success rate: 30.53%(29/95 pairs) </li><li> libfuzzer, (7,382 edges covered), success rate: 27.37%(26/95 pairs) </li></ol>
 <img style="max-width:800px" src="./lcms-2017-03-21-logscale.cactus.svg"/> <img style="max-width:800px" src="./lcms-2017-03-21.cactus.svg"/> 
 
 
@@ -66,7 +66,7 @@
  <img style="max-width:600px" src="./lcms-2017-03-21-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> libjpeg-turbo-07-2017 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (6,208 edges covered), success rate: 55.56%(30/54 pairs) </li><li> afl, (5,439 edges covered), success rate: 51.85%(28/54 pairs) </li><li> honggfuzz, (5,393 edges covered), success rate: 33.33%(18/54 pairs) </li><li> eclipser, (5,343 edges covered), success rate: 50.00%(27/54 pairs) </li><li> entropic, (4,981 edges covered), success rate: 37.04%(20/54 pairs) </li><li> libfuzzer, (3,733 edges covered), success rate: 25.93%(14/54 pairs) </li></ol>
+<ol><li> aflplusplus, (12,265 edges covered), success rate: 56.12%(55/98 pairs) </li><li> afl, (9,790 edges covered), success rate: 47.96%(47/98 pairs) </li><li> eclipser, (9,697 edges covered), success rate: 48.98%(48/98 pairs) </li><li> honggfuzz, (9,128 edges covered), success rate: 34.69%(34/98 pairs) </li><li> entropic, (8,800 edges covered), success rate: 36.73%(36/98 pairs) </li><li> libfuzzer, (7,071 edges covered), success rate: 26.53%(26/98 pairs) </li></ol>
 <img style="max-width:800px" src="./libjpeg-turbo-07-2017-logscale.cactus.svg"/> <img style="max-width:800px" src="./libjpeg-turbo-07-2017.cactus.svg"/> 
 
 
@@ -74,7 +74,7 @@
  <img style="max-width:600px" src="./libjpeg-turbo-07-2017-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> libpcap_fuzz_both </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (12,249 edges covered), success rate: 43.40%(23/53 pairs) </li><li> libfuzzer, (10,455 edges covered), success rate: 37.74%(20/53 pairs) </li><li> honggfuzz, (9,892 edges covered), success rate: 32.08%(17/53 pairs) </li><li> afl, (9,742 edges covered), success rate: 35.85%(19/53 pairs) </li><li> entropic, (9,690 edges covered), success rate: 32.08%(17/53 pairs) </li><li> eclipser, (8,689 edges covered), success rate: 37.74%(20/53 pairs) </li></ol>
+<ol><li> aflplusplus, (21,871 edges covered), success rate: 44.33%(43/97 pairs) </li><li> libfuzzer, (18,401 edges covered), success rate: 36.08%(35/97 pairs) </li><li> honggfuzz, (18,049 edges covered), success rate: 34.02%(33/97 pairs) </li><li> entropic, (17,886 edges covered), success rate: 35.05%(34/97 pairs) </li><li> afl, (17,469 edges covered), success rate: 38.14%(37/97 pairs) </li><li> eclipser, (16,520 edges covered), success rate: 37.11%(36/97 pairs) </li></ol>
 <img style="max-width:800px" src="./libpcap_fuzz_both-logscale.cactus.svg"/> <img style="max-width:800px" src="./libpcap_fuzz_both.cactus.svg"/> 
 
 
@@ -82,7 +82,7 @@
  <img style="max-width:600px" src="./libpcap_fuzz_both-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> libpng-1.2.56 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (4,105 edges covered), success rate: 71.93%(41/57 pairs) </li><li> honggfuzz, (3,655 edges covered), success rate: 66.67%(38/57 pairs) </li><li> entropic, (3,457 edges covered), success rate: 57.89%(33/57 pairs) </li><li> libfuzzer, (3,318 edges covered), success rate: 45.61%(26/57 pairs) </li><li> eclipser, (3,269 edges covered), success rate: 59.65%(34/57 pairs) </li><li> afl, (3,144 edges covered), success rate: 61.40%(35/57 pairs) </li></ol>
+<ol><li> aflplusplus, (7,228 edges covered), success rate: 71.72%(71/99 pairs) </li><li> honggfuzz, (6,266 edges covered), success rate: 62.63%(62/99 pairs) </li><li> entropic, (6,093 edges covered), success rate: 57.58%(57/99 pairs) </li><li> libfuzzer, (5,886 edges covered), success rate: 44.44%(44/99 pairs) </li><li> eclipser, (5,754 edges covered), success rate: 57.58%(57/99 pairs) </li><li> afl, (5,647 edges covered), success rate: 59.60%(59/99 pairs) </li></ol>
 <img style="max-width:800px" src="./libpng-1.2.56-logscale.cactus.svg"/> <img style="max-width:800px" src="./libpng-1.2.56.cactus.svg"/> 
 
 
@@ -90,7 +90,7 @@
  <img style="max-width:600px" src="./libpng-1.2.56-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> libxml2-v2.9.2 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> honggfuzz, (16,371 edges covered), success rate: 58.00%(29/50 pairs) </li><li> eclipser, (15,144 edges covered), success rate: 46.00%(23/50 pairs) </li><li> aflplusplus, (14,863 edges covered), success rate: 44.00%(22/50 pairs) </li><li> afl, (14,587 edges covered), success rate: 38.00%(19/50 pairs) </li><li> entropic, (14,324 edges covered), success rate: 40.00%(20/50 pairs) </li><li> libfuzzer, (13,808 edges covered), success rate: 34.00%(17/50 pairs) </li></ol>
+<ol><li> honggfuzz, (31,024 edges covered), success rate: 58.95%(56/95 pairs) </li><li> eclipser, (28,818 edges covered), success rate: 46.32%(44/95 pairs) </li><li> afl, (28,421 edges covered), success rate: 46.32%(44/95 pairs) </li><li> aflplusplus, (28,327 edges covered), success rate: 44.21%(42/95 pairs) </li><li> entropic, (27,461 edges covered), success rate: 41.05%(39/95 pairs) </li><li> libfuzzer, (25,982 edges covered), success rate: 33.68%(32/95 pairs) </li></ol>
 <img style="max-width:800px" src="./libxml2-v2.9.2-logscale.cactus.svg"/> <img style="max-width:800px" src="./libxml2-v2.9.2.cactus.svg"/> 
 
 
@@ -98,7 +98,7 @@
  <img style="max-width:600px" src="./libxml2-v2.9.2-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> libxslt_xpath </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (11,094 edges covered), success rate: 37.74%(20/53 pairs) </li><li> honggfuzz, (10,372 edges covered), success rate: 37.74%(20/53 pairs) </li><li> eclipser, (10,365 edges covered), success rate: 39.62%(21/53 pairs) </li><li> afl, (10,311 edges covered), success rate: 41.51%(22/53 pairs) </li><li> libfuzzer, (10,273 edges covered), success rate: 41.51%(22/53 pairs) </li><li> entropic, (10,235 edges covered), success rate: 41.51%(22/53 pairs) </li></ol>
+<ol><li> aflplusplus, (20,598 edges covered), success rate: 37.23%(35/94 pairs) </li><li> honggfuzz, (19,702 edges covered), success rate: 35.11%(33/94 pairs) </li><li> libfuzzer, (19,659 edges covered), success rate: 40.43%(38/94 pairs) </li><li> afl, (19,628 edges covered), success rate: 37.23%(35/94 pairs) </li><li> entropic, (19,582 edges covered), success rate: 38.30%(36/94 pairs) </li><li> eclipser, (19,376 edges covered), success rate: 37.23%(35/94 pairs) </li></ol>
 <img style="max-width:800px" src="./libxslt_xpath-logscale.cactus.svg"/> <img style="max-width:800px" src="./libxslt_xpath.cactus.svg"/> 
 
 
@@ -106,7 +106,7 @@
  <img style="max-width:600px" src="./libxslt_xpath-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> mbedtls_fuzz_dtlsclient </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (2,201 edges covered), success rate: 51.11%(23/45 pairs) </li><li> afl, (1,871 edges covered), success rate: 51.11%(23/45 pairs) </li><li> honggfuzz, (1,790 edges covered), success rate: 40.00%(18/45 pairs) </li><li> eclipser, (1,721 edges covered), success rate: 48.89%(22/45 pairs) </li><li> entropic, (1,509 edges covered), success rate: 37.78%(17/45 pairs) </li><li> libfuzzer, (1,507 edges covered), success rate: 35.56%(16/45 pairs) </li></ol>
+<ol><li> aflplusplus, (4,439 edges covered), success rate: 45.92%(45/98 pairs) </li><li> honggfuzz, (3,821 edges covered), success rate: 38.78%(38/98 pairs) </li><li> afl, (3,626 edges covered), success rate: 41.84%(41/98 pairs) </li><li> eclipser, (3,415 edges covered), success rate: 41.84%(41/98 pairs) </li><li> entropic, (3,166 edges covered), success rate: 39.80%(39/98 pairs) </li><li> libfuzzer, (2,967 edges covered), success rate: 36.73%(36/98 pairs) </li></ol>
 <img style="max-width:800px" src="./mbedtls_fuzz_dtlsclient-logscale.cactus.svg"/> <img style="max-width:800px" src="./mbedtls_fuzz_dtlsclient.cactus.svg"/> 
 
 
@@ -114,7 +114,7 @@
  <img style="max-width:600px" src="./mbedtls_fuzz_dtlsclient-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> openssl_x509 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> libfuzzer, (6,475 edges covered), success rate: 8.33%(4/48 pairs) </li><li> entropic, (6,475 edges covered), success rate: 10.42%(5/48 pairs) </li><li> afl, (6,201 edges covered), success rate: 12.50%(6/48 pairs) </li><li> eclipser, (6,121 edges covered), success rate: 10.42%(5/48 pairs) </li><li> honggfuzz, (5,757 edges covered), success rate: 14.58%(7/48 pairs) </li><li> aflplusplus, (5,392 edges covered), success rate: 8.33%(4/48 pairs) </li></ol>
+<ol><li> entropic, (12,161 edges covered), success rate: 10.53%(10/95 pairs) </li><li> libfuzzer, (11,914 edges covered), success rate: 8.42%(8/95 pairs) </li><li> afl, (10,918 edges covered), success rate: 11.58%(11/95 pairs) </li><li> eclipser, (10,589 edges covered), success rate: 10.53%(10/95 pairs) </li><li> aflplusplus, (10,201 edges covered), success rate: 9.47%(9/95 pairs) </li><li> honggfuzz, (10,171 edges covered), success rate: 13.68%(13/95 pairs) </li></ol>
 <img style="max-width:800px" src="./openssl_x509-logscale.cactus.svg"/> <img style="max-width:800px" src="./openssl_x509.cactus.svg"/> 
 
 
@@ -122,7 +122,7 @@
  <img style="max-width:600px" src="./openssl_x509-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> openthread-2019-12-23 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> entropic, (5,106 edges covered), success rate: 63.46%(33/52 pairs) </li><li> aflplusplus, (5,034 edges covered), success rate: 57.69%(30/52 pairs) </li><li> eclipser, (4,883 edges covered), success rate: 51.92%(27/52 pairs) </li><li> libfuzzer, (4,838 edges covered), success rate: 67.31%(35/52 pairs) </li><li> honggfuzz, (4,695 edges covered), success rate: 42.31%(22/52 pairs) </li><li> afl, (4,656 edges covered), success rate: 51.92%(27/52 pairs) </li></ol>
+<ol><li> entropic, (8,902 edges covered), success rate: 67.35%(66/98 pairs) </li><li> aflplusplus, (8,804 edges covered), success rate: 63.27%(62/98 pairs) </li><li> libfuzzer, (8,644 edges covered), success rate: 70.41%(69/98 pairs) </li><li> eclipser, (8,518 edges covered), success rate: 58.16%(57/98 pairs) </li><li> afl, (8,423 edges covered), success rate: 62.24%(61/98 pairs) </li><li> honggfuzz, (8,381 edges covered), success rate: 48.98%(48/98 pairs) </li></ol>
 <img style="max-width:800px" src="./openthread-2019-12-23-logscale.cactus.svg"/> <img style="max-width:800px" src="./openthread-2019-12-23.cactus.svg"/> 
 
 
@@ -130,7 +130,7 @@
  <img style="max-width:600px" src="./openthread-2019-12-23-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> php_php-fuzz-parser </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> entropic, (29,033 edges covered), success rate: 18.52%(10/54 pairs) </li><li> honggfuzz, (28,722 edges covered), success rate: 18.52%(10/54 pairs) </li><li> afl, (28,449 edges covered), success rate: 22.22%(12/54 pairs) </li><li> aflplusplus, (28,325 edges covered), success rate: 16.67%(9/54 pairs) </li><li> eclipser, (27,872 edges covered), success rate: 11.11%(6/54 pairs) </li><li> libfuzzer, (27,710 edges covered), success rate: 14.81%(8/54 pairs) </li></ol>
+<ol><li> entropic, (47,474 edges covered), success rate: 18.75%(18/96 pairs) </li><li> honggfuzz, (47,241 edges covered), success rate: 18.75%(18/96 pairs) </li><li> aflplusplus, (46,265 edges covered), success rate: 18.75%(18/96 pairs) </li><li> afl, (46,248 edges covered), success rate: 22.92%(22/96 pairs) </li><li> eclipser, (45,295 edges covered), success rate: 16.67%(16/96 pairs) </li><li> libfuzzer, (44,657 edges covered), success rate: 18.75%(18/96 pairs) </li></ol>
 <img style="max-width:800px" src="./php_php-fuzz-parser-logscale.cactus.svg"/> <img style="max-width:800px" src="./php_php-fuzz-parser.cactus.svg"/> 
 
 
@@ -138,7 +138,7 @@
  <img style="max-width:600px" src="./php_php-fuzz-parser-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> proj4-2017-08-14 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> entropic, (3,934 edges covered), success rate: 54.55%(30/55 pairs) </li><li> libfuzzer, (3,933 edges covered), success rate: 54.55%(30/55 pairs) </li><li> honggfuzz, (3,904 edges covered), success rate: 52.73%(29/55 pairs) </li><li> eclipser, (3,723 edges covered), success rate: 30.91%(17/55 pairs) </li><li> aflplusplus, (3,708 edges covered), success rate: 41.82%(23/55 pairs) </li><li> afl, (3,692 edges covered), success rate: 25.45%(14/55 pairs) </li></ol>
+<ol><li> entropic, (7,261 edges covered), success rate: 55.21%(53/96 pairs) </li><li> libfuzzer, (7,250 edges covered), success rate: 53.12%(51/96 pairs) </li><li> honggfuzz, (7,192 edges covered), success rate: 51.04%(49/96 pairs) </li><li> aflplusplus, (6,808 edges covered), success rate: 41.67%(40/96 pairs) </li><li> eclipser, (6,737 edges covered), success rate: 29.17%(28/96 pairs) </li><li> afl, (6,587 edges covered), success rate: 29.17%(28/96 pairs) </li></ol>
 <img style="max-width:800px" src="./proj4-2017-08-14-logscale.cactus.svg"/> <img style="max-width:800px" src="./proj4-2017-08-14.cactus.svg"/> 
 
 
@@ -146,7 +146,7 @@
  <img style="max-width:600px" src="./proj4-2017-08-14-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> re2-2014-12-09 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (14,822 edges covered), success rate: 92.16%(47/51 pairs) </li><li> eclipser, (14,822 edges covered), success rate: 84.31%(43/51 pairs) </li><li> libfuzzer, (14,818 edges covered), success rate: 84.31%(43/51 pairs) </li><li> honggfuzz, (14,799 edges covered), success rate: 80.39%(41/51 pairs) </li><li> entropic, (14,769 edges covered), success rate: 86.27%(44/51 pairs) </li><li> afl, (14,691 edges covered), success rate: 84.31%(43/51 pairs) </li></ol>
+<ol><li> libfuzzer, (29,441 edges covered), success rate: 90.82%(89/98 pairs) </li><li> eclipser, (29,438 edges covered), success rate: 86.73%(85/98 pairs) </li><li> aflplusplus, (29,434 edges covered), success rate: 94.90%(93/98 pairs) </li><li> honggfuzz, (29,380 edges covered), success rate: 82.65%(81/98 pairs) </li><li> entropic, (29,347 edges covered), success rate: 87.76%(86/98 pairs) </li><li> afl, (29,312 edges covered), success rate: 88.78%(87/98 pairs) </li></ol>
 <img style="max-width:800px" src="./re2-2014-12-09-logscale.cactus.svg"/> <img style="max-width:800px" src="./re2-2014-12-09.cactus.svg"/> 
 
 
@@ -154,7 +154,7 @@
  <img style="max-width:600px" src="./re2-2014-12-09-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> sqlite3_ossfuzz </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> afl, (58,588 edges covered), success rate: 36.17%(17/47 pairs) </li><li> honggfuzz, (58,032 edges covered), success rate: 31.91%(15/47 pairs) </li><li> eclipser, (57,915 edges covered), success rate: 36.17%(17/47 pairs) </li><li> entropic, (57,209 edges covered), success rate: 36.17%(17/47 pairs) </li><li> libfuzzer, (56,185 edges covered), success rate: 34.04%(16/47 pairs) </li><li> aflplusplus, (54,943 edges covered), success rate: 34.04%(16/47 pairs) </li></ol>
+<ol><li> afl, (87,761 edges covered), success rate: 35.79%(34/95 pairs) </li><li> eclipser, (87,200 edges covered), success rate: 33.68%(32/95 pairs) </li><li> honggfuzz, (87,133 edges covered), success rate: 32.63%(31/95 pairs) </li><li> entropic, (85,036 edges covered), success rate: 34.74%(33/95 pairs) </li><li> libfuzzer, (84,284 edges covered), success rate: 35.79%(34/95 pairs) </li><li> aflplusplus, (82,355 edges covered), success rate: 32.63%(31/95 pairs) </li></ol>
 <img style="max-width:800px" src="./sqlite3_ossfuzz-logscale.cactus.svg"/> <img style="max-width:800px" src="./sqlite3_ossfuzz.cactus.svg"/> 
 
 
@@ -162,7 +162,7 @@
  <img style="max-width:600px" src="./sqlite3_ossfuzz-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> systemd_fuzz-link-parser </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> honggfuzz, (789 edges covered), success rate: 36.00%(18/50 pairs) </li><li> entropic, (664 edges covered), success rate: 34.00%(17/50 pairs) </li><li> libfuzzer, (660 edges covered), success rate: 34.00%(17/50 pairs) </li><li> eclipser, (644 edges covered), success rate: 34.00%(17/50 pairs) </li><li> afl, (598 edges covered), success rate: 36.00%(18/50 pairs) </li><li> aflplusplus, (585 edges covered), success rate: 26.00%(13/50 pairs) </li></ol>
+<ol><li> honggfuzz, (1,424 edges covered), success rate: 33.68%(32/95 pairs) </li><li> entropic, (1,286 edges covered), success rate: 31.58%(30/95 pairs) </li><li> eclipser, (1,222 edges covered), success rate: 31.58%(30/95 pairs) </li><li> libfuzzer, (1,222 edges covered), success rate: 29.47%(28/95 pairs) </li><li> aflplusplus, (1,122 edges covered), success rate: 26.32%(25/95 pairs) </li><li> afl, (1,061 edges covered), success rate: 29.47%(28/95 pairs) </li></ol>
 <img style="max-width:800px" src="./systemd_fuzz-link-parser-logscale.cactus.svg"/> <img style="max-width:800px" src="./systemd_fuzz-link-parser.cactus.svg"/> 
 
 
@@ -170,7 +170,7 @@
  <img style="max-width:600px" src="./systemd_fuzz-link-parser-mann_whitney_plot.svg"/>
 <h2 style='color:green; font-weight: bold; text-align:center; margin-top:180px'> vorbis-2017-12-11 </h2>
 <h4 style='font-weight: bold'>Ranking </h4>
-<ol><li> aflplusplus, (3,114 edges covered), success rate: 55.10%(27/49 pairs) </li><li> honggfuzz, (3,006 edges covered), success rate: 53.06%(26/49 pairs) </li><li> afl, (1,757 edges covered), success rate: 53.06%(26/49 pairs) </li><li> eclipser, (1,714 edges covered), success rate: 55.10%(27/49 pairs) </li><li> entropic, (1,676 edges covered), success rate: 51.02%(25/49 pairs) </li><li> libfuzzer, (1,558 edges covered), success rate: 48.98%(24/49 pairs) </li></ol>
+<ol><li> aflplusplus, (5,562 edges covered), success rate: 59.57%(56/94 pairs) </li><li> honggfuzz, (5,499 edges covered), success rate: 52.13%(49/94 pairs) </li><li> entropic, (4,030 edges covered), success rate: 56.38%(53/94 pairs) </li><li> afl, (3,484 edges covered), success rate: 53.19%(50/94 pairs) </li><li> eclipser, (3,452 edges covered), success rate: 52.13%(49/94 pairs) </li><li> libfuzzer, (3,313 edges covered), success rate: 48.94%(46/94 pairs) </li></ol>
 <img style="max-width:800px" src="./vorbis-2017-12-11-logscale.cactus.svg"/> <img style="max-width:800px" src="./vorbis-2017-12-11.cactus.svg"/> 
 
 
