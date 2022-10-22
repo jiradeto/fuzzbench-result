@@ -1,0 +1,4471 @@
+<!--
+     Copyright 2020 Google LLC
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            FuzzBench: 3exp-24h-20t-rd report
+            
+        </title>
+
+        <!-- Import Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Import Google Material Icon Font -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    </head>
+<body>
+    <div class="container"><div class="row"><div class="col s12 m10 l10">
+
+        <h1 class="center-align brown-text text-darken-3">
+            FuzzBench: 3exp-24h-20t-rd report
+        </h1>
+        
+
+        <div class="card-panel amber lighten-5">
+            <div class="row">
+                <div class="col s4 m2 center-align">
+                    <i class="medium material-icons">warning</i>
+                </div>
+                <div class="col s8 m10">
+                    <span class="black-text">
+                        Please consider this as a preliminary report to
+                        demonstrate the capabilities of FuzzBench. While we have
+                        tried our best, we have not confirmed that we configured
+                        everything correctly. We are hoping to work together
+                        with the community to validate results and improve the
+                        set of fuzzers, benchmarks, and their configurations in
+                        the future.
+                        See <a href="https://google.github.io/fuzzbench/faq">FAQ</a>
+                        for more details.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div id="summary" class="section scrollspy">
+            <h2 class="green-text text-darken-3">experiment summary</h2>
+
+            
+
+            
+
+            We show two different aggregate (cross-benchmark) rankings of fuzzers.
+            The first is based on the average of per-benchmarks scores, where
+            the score represents the percentage of the highest reached median
+            code-coverage on a given benchmark (higher value is better).
+
+            The second ranking shows the average rank of fuzzers, after we rank
+            them on each benchmark according to their median reached
+            code-covereges (lower value is better).
+
+            <div class="row">
+                <div class="col s5 offset-s1">
+                    <h5 class="center-align">By avg. score</h5>
+                    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>average normalized score</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/aflplusplus">aflplusplus</a></th>
+      <td>95.65</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/honggfuzz">honggfuzz</a></th>
+      <td>94.82</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/entropic">entropic</a></th>
+      <td>94.05</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/eclipser">eclipser</a></th>
+      <td>90.63</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/afl">afl</a></th>
+      <td>89.36</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/libfuzzer">libfuzzer</a></th>
+      <td>87.81</td>
+    </tr>
+  </tbody>
+</table>
+                </div>
+                <div class="col s5">
+                    <h5 class="center-align">By avg. rank</h5>
+                    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>average rank</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/entropic">entropic</a></th>
+      <td>2.33</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/aflplusplus">aflplusplus</a></th>
+      <td>2.45</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/honggfuzz">honggfuzz</a></th>
+      <td>3.20</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/eclipser">eclipser</a></th>
+      <td>3.80</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/afl">afl</a></th>
+      <td>4.30</td>
+    </tr>
+    <tr>
+      <th><a href="https://github.com/google/fuzzbench/blob/master/fuzzers/libfuzzer">libfuzzer</a></th>
+      <td>4.92</td>
+    </tr>
+  </tbody>
+</table>
+                </div>
+            </div>
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Critical difference diagram
+                    </div>
+                    <div class="collapsible-body">
+
+
+            
+
+            The diagram visualizes the average rank of fuzzers (second ranking
+            above) while showing the significance of the differences as well.
+            What is considered a "critical difference" (CD) is based on the
+            Friedman/Nemenyi post-hoc test. See more in the <a
+            href="https://google.github.io/fuzzbench/reference/report/">
+            documentation</a>.
+
+            <br>
+
+            <div class="row">
+                <div class="col s7 offset-s3">
+                    <img class="responsive-img materialboxed"
+                         src="experiment_critical_difference_plot.svg">
+                </div>
+            </div>
+
+            Note: If a fuzzer does not support all benchmarks, its ranking as
+            shown in this diagram can be lower than it should be. So please
+            check the list of supported benchmarks for the fuzzer(s) of your interest.
+            The list could be specified in the fuzzer's README.md like
+            <a href="https://github.com/google/fuzzbench/blob/master/fuzzers/aflsmart/README.md">this</a>.
+
+             
+
+                    </div>
+                </li>
+            </ul>
+
+             
+
+             
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Median relative code-coverages on each benchmark
+                    </div>
+                    <div class="collapsible-body">
+                        <p style="margin-bottom:3cm;">
+                      <strong>Note:</strong> The relative coverage summary table shows the median
+                      relative performance of each fuzzer to the <em>experiment maximum</em>.  Thus the 
+                      highest relative performance may not be 100%.<br>
+                      <code> trial_relative_coverage  = trial_coverage / experiment_max_coverage</code><br>
+                        </p>
+                        <style  type="text/css" >
+    #T_0b867_ td, th {
+          width: 25px;
+          padding: 7px 5px;
+    }    #T_0b867_ th.col_heading {
+          max-width: 25px;
+          overflow: visible;
+          transform-origin: bottom left;
+          transform: translateX(20px) rotate(-45deg);
+    }#T_0b867_row0_col0,#T_0b867_row2_col1,#T_0b867_row3_col0,#T_0b867_row4_col0,#T_0b867_row7_col0,#T_0b867_row9_col0,#T_0b867_row12_col2,#T_0b867_row13_col0,#T_0b867_row14_col2,#T_0b867_row15_col0,#T_0b867_row16_col0,#T_0b867_row19_col0,#T_0b867_row20_col1{
+            background-color:  #eff1f2;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row0_col1,#T_0b867_row0_col2,#T_0b867_row0_col3,#T_0b867_row0_col4,#T_0b867_row0_col5,#T_0b867_row2_col0,#T_0b867_row2_col2,#T_0b867_row2_col3,#T_0b867_row2_col4,#T_0b867_row2_col5,#T_0b867_row3_col1,#T_0b867_row3_col2,#T_0b867_row3_col3,#T_0b867_row3_col4,#T_0b867_row3_col5,#T_0b867_row4_col1,#T_0b867_row4_col2,#T_0b867_row4_col3,#T_0b867_row4_col4,#T_0b867_row4_col5,#T_0b867_row5_col1,#T_0b867_row5_col2,#T_0b867_row5_col3,#T_0b867_row5_col4,#T_0b867_row5_col5,#T_0b867_row7_col1,#T_0b867_row7_col2,#T_0b867_row7_col3,#T_0b867_row7_col4,#T_0b867_row7_col5,#T_0b867_row8_col1,#T_0b867_row8_col5,#T_0b867_row9_col1,#T_0b867_row9_col2,#T_0b867_row9_col3,#T_0b867_row9_col4,#T_0b867_row9_col5,#T_0b867_row10_col0,#T_0b867_row10_col2,#T_0b867_row10_col3,#T_0b867_row10_col4,#T_0b867_row10_col5,#T_0b867_row11_col0,#T_0b867_row11_col3,#T_0b867_row11_col4,#T_0b867_row11_col5,#T_0b867_row12_col0,#T_0b867_row12_col1,#T_0b867_row12_col3,#T_0b867_row12_col4,#T_0b867_row12_col5,#T_0b867_row13_col1,#T_0b867_row13_col2,#T_0b867_row13_col3,#T_0b867_row13_col4,#T_0b867_row13_col5,#T_0b867_row14_col0,#T_0b867_row14_col1,#T_0b867_row14_col3,#T_0b867_row14_col4,#T_0b867_row14_col5,#T_0b867_row15_col1,#T_0b867_row15_col2,#T_0b867_row15_col3,#T_0b867_row15_col4,#T_0b867_row15_col5,#T_0b867_row16_col1,#T_0b867_row16_col2,#T_0b867_row16_col3,#T_0b867_row16_col4,#T_0b867_row16_col5,#T_0b867_row17_col0,#T_0b867_row17_col1,#T_0b867_row17_col3,#T_0b867_row17_col4,#T_0b867_row19_col1,#T_0b867_row19_col2,#T_0b867_row19_col3,#T_0b867_row19_col4,#T_0b867_row19_col5,#T_0b867_row20_col0,#T_0b867_row20_col2,#T_0b867_row20_col3,#T_0b867_row20_col4,#T_0b867_row20_col5{
+            background-color:  #eff1f2;
+            color:  #000000;
+        }#T_0b867_row1_col0{
+            background-color:  #eff1f2;
+            color:  #000000;
+            background-color:  lightgreen;
+            border-bottom:  3px solid black;
+        }#T_0b867_row1_col1,#T_0b867_row1_col2,#T_0b867_row1_col3,#T_0b867_row1_col4,#T_0b867_row1_col5{
+            background-color:  #eff1f2;
+            color:  #000000;
+            border-bottom:  3px solid black;
+        }#T_0b867_row5_col0{
+            background-color:  #e6edf0;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row6_col0,#T_0b867_row18_col3{
+            background-color:  #badde8;
+            color:  #000000;
+        }#T_0b867_row6_col1{
+            background-color:  #b5dbe7;
+            color:  #000000;
+        }#T_0b867_row6_col2,#T_0b867_row6_col5{
+            background-color:  #add8e6;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row6_col3{
+            background-color:  #bedee9;
+            color:  #000000;
+        }#T_0b867_row6_col4{
+            background-color:  #bcdee9;
+            color:  #000000;
+        }#T_0b867_row8_col0{
+            background-color:  #c6e2ea;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row8_col2{
+            background-color:  #cce4eb;
+            color:  #000000;
+        }#T_0b867_row8_col3{
+            background-color:  #dceaee;
+            color:  #000000;
+        }#T_0b867_row8_col4{
+            background-color:  #dbe9ee;
+            color:  #000000;
+        }#T_0b867_row10_col1{
+            background-color:  #dbe9ee;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row11_col1{
+            background-color:  #ecf0f1;
+            color:  #000000;
+        }#T_0b867_row11_col2{
+            background-color:  #cce4eb;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row17_col2{
+            background-color:  #cae3eb;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row17_col5{
+            background-color:  #e8eef0;
+            color:  #000000;
+        }#T_0b867_row18_col0{
+            background-color:  #bbdde8;
+            color:  #000000;
+        }#T_0b867_row18_col1{
+            background-color:  #c7e2eb;
+            color:  #000000;
+        }#T_0b867_row18_col2{
+            background-color:  #b5dbe7;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row18_col4{
+            background-color:  #bddee9;
+            color:  #000000;
+        }#T_0b867_row18_col5{
+            background-color:  #b9dce8;
+            color:  #000000;
+        }#T_0b867_row21_col0{
+            background-color:  #bedee9;
+            color:  #000000;
+            background-color:  lightgreen;
+        }#T_0b867_row21_col1{
+            background-color:  #cfe5ec;
+            color:  #000000;
+        }#T_0b867_row21_col2{
+            background-color:  #bfdfe9;
+            color:  #000000;
+        }#T_0b867_row21_col3{
+            background-color:  #c9e3eb;
+            color:  #000000;
+        }#T_0b867_row21_col4{
+            background-color:  #cbe3eb;
+            color:  #000000;
+        }#T_0b867_row21_col5{
+            background-color:  #e1ecef;
+            color:  #000000;
+        }</style><table id="T_0b867_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >aflplusplus</th>        <th class="col_heading level0 col1" >honggfuzz</th>        <th class="col_heading level0 col2" >entropic</th>        <th class="col_heading level0 col3" >eclipser</th>        <th class="col_heading level0 col4" >afl</th>        <th class="col_heading level0 col5" >libfuzzer</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_0b867_level0_row0" class="row_heading level0 row0" >FuzzerMedian</th>
+                        <td id="T_0b867_row0_col0" class="data row0 col0" >92.22</td>
+                        <td id="T_0b867_row0_col1" class="data row0 col1" >89.07</td>
+                        <td id="T_0b867_row0_col2" class="data row0 col2" >86.60</td>
+                        <td id="T_0b867_row0_col3" class="data row0 col3" >85.24</td>
+                        <td id="T_0b867_row0_col4" class="data row0 col4" >82.67</td>
+                        <td id="T_0b867_row0_col5" class="data row0 col5" >79.60</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row1" class="row_heading level0 row1" >FuzzerMean</th>
+                        <td id="T_0b867_row1_col0" class="data row1 col0" >87.36</td>
+                        <td id="T_0b867_row1_col1" class="data row1 col1" >86.64</td>
+                        <td id="T_0b867_row1_col2" class="data row1 col2" >85.89</td>
+                        <td id="T_0b867_row1_col3" class="data row1 col3" >82.66</td>
+                        <td id="T_0b867_row1_col4" class="data row1 col4" >81.42</td>
+                        <td id="T_0b867_row1_col5" class="data row1 col5" >80.19</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row2" class="row_heading level0 row2" >bloaty_fuzz_target</th>
+                        <td id="T_0b867_row2_col0" class="data row2 col0" >61.25</td>
+                        <td id="T_0b867_row2_col1" class="data row2 col1" >90.80</td>
+                        <td id="T_0b867_row2_col2" class="data row2 col2" >81.55</td>
+                        <td id="T_0b867_row2_col3" class="data row2 col3" >83.09</td>
+                        <td id="T_0b867_row2_col4" class="data row2 col4" >81.47</td>
+                        <td id="T_0b867_row2_col5" class="data row2 col5" >66.53</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row3" class="row_heading level0 row3" >curl_curl_fuzzer_http</th>
+                        <td id="T_0b867_row3_col0" class="data row3 col0" >92.45</td>
+                        <td id="T_0b867_row3_col1" class="data row3 col1" >92.45</td>
+                        <td id="T_0b867_row3_col2" class="data row3 col2" >84.01</td>
+                        <td id="T_0b867_row3_col3" class="data row3 col3" >83.56</td>
+                        <td id="T_0b867_row3_col4" class="data row3 col4" >83.87</td>
+                        <td id="T_0b867_row3_col5" class="data row3 col5" >76.54</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row4" class="row_heading level0 row4" >freetype2-2017</th>
+                        <td id="T_0b867_row4_col0" class="data row4 col0" >94.07</td>
+                        <td id="T_0b867_row4_col1" class="data row4 col1" >76.71</td>
+                        <td id="T_0b867_row4_col2" class="data row4 col2" >63.47</td>
+                        <td id="T_0b867_row4_col3" class="data row4 col3" >59.80</td>
+                        <td id="T_0b867_row4_col4" class="data row4 col4" >50.58</td>
+                        <td id="T_0b867_row4_col5" class="data row4 col5" >48.22</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row5" class="row_heading level0 row5" >harfbuzz-1.3.2</th>
+                        <td id="T_0b867_row5_col0" class="data row5 col0" >95.73</td>
+                        <td id="T_0b867_row5_col1" class="data row5 col1" >91.46</td>
+                        <td id="T_0b867_row5_col2" class="data row5 col2" >84.52</td>
+                        <td id="T_0b867_row5_col3" class="data row5 col3" >88.68</td>
+                        <td id="T_0b867_row5_col4" class="data row5 col4" >81.42</td>
+                        <td id="T_0b867_row5_col5" class="data row5 col5" >81.70</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row6" class="row_heading level0 row6" >jsoncpp_jsoncpp_fuzzer</th>
+                        <td id="T_0b867_row6_col0" class="data row6 col0" >99.04</td>
+                        <td id="T_0b867_row6_col1" class="data row6 col1" >99.42</td>
+                        <td id="T_0b867_row6_col2" class="data row6 col2" >100.00</td>
+                        <td id="T_0b867_row6_col3" class="data row6 col3" >98.75</td>
+                        <td id="T_0b867_row6_col4" class="data row6 col4" >98.84</td>
+                        <td id="T_0b867_row6_col5" class="data row6 col5" >100.00</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row7" class="row_heading level0 row7" >lcms-2017-03-21</th>
+                        <td id="T_0b867_row7_col0" class="data row7 col0" >89.48</td>
+                        <td id="T_0b867_row7_col1" class="data row7 col1" >87.89</td>
+                        <td id="T_0b867_row7_col2" class="data row7 col2" >89.43</td>
+                        <td id="T_0b867_row7_col3" class="data row7 col3" >88.66</td>
+                        <td id="T_0b867_row7_col4" class="data row7 col4" >88.81</td>
+                        <td id="T_0b867_row7_col5" class="data row7 col5" >84.59</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row8" class="row_heading level0 row8" >libjpeg-turbo-07-2017</th>
+                        <td id="T_0b867_row8_col0" class="data row8 col0" >98.08</td>
+                        <td id="T_0b867_row8_col1" class="data row8 col1" >89.99</td>
+                        <td id="T_0b867_row8_col2" class="data row8 col2" >97.62</td>
+                        <td id="T_0b867_row8_col3" class="data row8 col3" >96.42</td>
+                        <td id="T_0b867_row8_col4" class="data row8 col4" >96.52</td>
+                        <td id="T_0b867_row8_col5" class="data row8 col5" >89.34</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row9" class="row_heading level0 row9" >libpcap_fuzz_both</th>
+                        <td id="T_0b867_row9_col0" class="data row9 col0" >92.06</td>
+                        <td id="T_0b867_row9_col1" class="data row9 col1" >87.30</td>
+                        <td id="T_0b867_row9_col2" class="data row9 col2" >84.85</td>
+                        <td id="T_0b867_row9_col3" class="data row9 col3" >88.37</td>
+                        <td id="T_0b867_row9_col4" class="data row9 col4" >86.70</td>
+                        <td id="T_0b867_row9_col5" class="data row9 col5" >77.49</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row10" class="row_heading level0 row10" >libpng-1.2.56</th>
+                        <td id="T_0b867_row10_col0" class="data row10 col0" >94.46</td>
+                        <td id="T_0b867_row10_col1" class="data row10 col1" >96.49</td>
+                        <td id="T_0b867_row10_col2" class="data row10 col2" >92.44</td>
+                        <td id="T_0b867_row10_col3" class="data row10 col3" >94.51</td>
+                        <td id="T_0b867_row10_col4" class="data row10 col4" >90.18</td>
+                        <td id="T_0b867_row10_col5" class="data row10 col5" >91.33</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row11" class="row_heading level0 row11" >libxml2-v2.9.2</th>
+                        <td id="T_0b867_row11_col0" class="data row11 col0" >92.62</td>
+                        <td id="T_0b867_row11_col1" class="data row11 col1" >95.25</td>
+                        <td id="T_0b867_row11_col2" class="data row11 col2" >97.66</td>
+                        <td id="T_0b867_row11_col3" class="data row11 col3" >93.02</td>
+                        <td id="T_0b867_row11_col4" class="data row11 col4" >91.07</td>
+                        <td id="T_0b867_row11_col5" class="data row11 col5" >88.23</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row12" class="row_heading level0 row12" >libxslt_xpath</th>
+                        <td id="T_0b867_row12_col0" class="data row12 col0" >87.65</td>
+                        <td id="T_0b867_row12_col1" class="data row12 col1" >74.98</td>
+                        <td id="T_0b867_row12_col2" class="data row12 col2" >88.36</td>
+                        <td id="T_0b867_row12_col3" class="data row12 col3" >71.75</td>
+                        <td id="T_0b867_row12_col4" class="data row12 col4" >71.96</td>
+                        <td id="T_0b867_row12_col5" class="data row12 col5" >71.39</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row13" class="row_heading level0 row13" >mbedtls_fuzz_dtlsclient</th>
+                        <td id="T_0b867_row13_col0" class="data row13 col0" >79.92</td>
+                        <td id="T_0b867_row13_col1" class="data row13 col1" >78.13</td>
+                        <td id="T_0b867_row13_col2" class="data row13 col2" >78.78</td>
+                        <td id="T_0b867_row13_col3" class="data row13 col3" >78.06</td>
+                        <td id="T_0b867_row13_col4" class="data row13 col4" >78.49</td>
+                        <td id="T_0b867_row13_col5" class="data row13 col5" >75.57</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row14" class="row_heading level0 row14" >openssl_x509</th>
+                        <td id="T_0b867_row14_col0" class="data row14 col0" >67.39</td>
+                        <td id="T_0b867_row14_col1" class="data row14 col1" >70.86</td>
+                        <td id="T_0b867_row14_col2" class="data row14 col2" >73.93</td>
+                        <td id="T_0b867_row14_col3" class="data row14 col3" >70.34</td>
+                        <td id="T_0b867_row14_col4" class="data row14 col4" >68.53</td>
+                        <td id="T_0b867_row14_col5" class="data row14 col5" >69.49</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row15" class="row_heading level0 row15" >openthread-2019-12-23</th>
+                        <td id="T_0b867_row15_col0" class="data row15 col0" >70.87</td>
+                        <td id="T_0b867_row15_col1" class="data row15 col1" >60.29</td>
+                        <td id="T_0b867_row15_col2" class="data row15 col2" >61.99</td>
+                        <td id="T_0b867_row15_col3" class="data row15 col3" >67.08</td>
+                        <td id="T_0b867_row15_col4" class="data row15 col4" >69.94</td>
+                        <td id="T_0b867_row15_col5" class="data row15 col5" >61.89</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row16" class="row_heading level0 row16" >php_php-fuzz-parser</th>
+                        <td id="T_0b867_row16_col0" class="data row16 col0" >92.39</td>
+                        <td id="T_0b867_row16_col1" class="data row16 col1" >88.15</td>
+                        <td id="T_0b867_row16_col2" class="data row16 col2" >88.49</td>
+                        <td id="T_0b867_row16_col3" class="data row16 col3" >86.92</td>
+                        <td id="T_0b867_row16_col4" class="data row16 col4" >87.14</td>
+                        <td id="T_0b867_row16_col5" class="data row16 col5" >82.71</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row17" class="row_heading level0 row17" >proj4-2017-08-14</th>
+                        <td id="T_0b867_row17_col0" class="data row17 col0" >88.64</td>
+                        <td id="T_0b867_row17_col1" class="data row17 col1" >94.34</td>
+                        <td id="T_0b867_row17_col2" class="data row17 col2" >97.82</td>
+                        <td id="T_0b867_row17_col3" class="data row17 col3" >63.02</td>
+                        <td id="T_0b867_row17_col4" class="data row17 col4" >61.81</td>
+                        <td id="T_0b867_row17_col5" class="data row17 col5" >95.57</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row18" class="row_heading level0 row18" >re2-2014-12-09</th>
+                        <td id="T_0b867_row18_col0" class="data row18 col0" >98.95</td>
+                        <td id="T_0b867_row18_col1" class="data row18 col1" >98.00</td>
+                        <td id="T_0b867_row18_col2" class="data row18 col2" >99.42</td>
+                        <td id="T_0b867_row18_col3" class="data row18 col3" >99.01</td>
+                        <td id="T_0b867_row18_col4" class="data row18 col4" >98.79</td>
+                        <td id="T_0b867_row18_col5" class="data row18 col5" >99.11</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row19" class="row_heading level0 row19" >sqlite3_ossfuzz</th>
+                        <td id="T_0b867_row19_col0" class="data row19 col0" >89.98</td>
+                        <td id="T_0b867_row19_col1" class="data row19 col1" >76.41</td>
+                        <td id="T_0b867_row19_col2" class="data row19 col2" >81.60</td>
+                        <td id="T_0b867_row19_col3" class="data row19 col3" >80.94</td>
+                        <td id="T_0b867_row19_col4" class="data row19 col4" >81.27</td>
+                        <td id="T_0b867_row19_col5" class="data row19 col5" >75.22</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row20" class="row_heading level0 row20" >systemd_fuzz-link-parser</th>
+                        <td id="T_0b867_row20_col0" class="data row20 col0" >63.36</td>
+                        <td id="T_0b867_row20_col1" class="data row20 col1" >86.42</td>
+                        <td id="T_0b867_row20_col2" class="data row20 col2" >73.28</td>
+                        <td id="T_0b867_row20_col3" class="data row20 col3" >63.36</td>
+                        <td id="T_0b867_row20_col4" class="data row20 col4" >63.36</td>
+                        <td id="T_0b867_row20_col5" class="data row20 col5" >72.84</td>
+            </tr>
+            <tr>
+                        <th id="T_0b867_level0_row21" class="row_heading level0 row21" >vorbis-2017-12-11</th>
+                        <td id="T_0b867_row21_col0" class="data row21 col0" >98.74</td>
+                        <td id="T_0b867_row21_col1" class="data row21 col1" >97.45</td>
+                        <td id="T_0b867_row21_col2" class="data row21 col2" >98.63</td>
+                        <td id="T_0b867_row21_col3" class="data row21 col3" >97.88</td>
+                        <td id="T_0b867_row21_col4" class="data row21 col4" >97.72</td>
+                        <td id="T_0b867_row21_col5" class="data row21 col5" >96.08</td>
+            </tr>
+    </tbody></table>
+                      <ul>
+                          <li> Fuzzers are sorted by "FuzzerMean" (average median relative coverage), highest on the left.</li>
+                          <li> Green background = highest relative median coverage.</li>
+                          <li> Blue gradient background = greater than 95% relative median coverage.</li>
+                      </ul>
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="summary" -->
+
+        
+
+        <div id="bloaty_fuzz_target" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">bloaty_fuzz_target summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="bloaty_fuzz_target_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="bloaty_fuzz_target_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#bloaty_fuzz_target_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#bloaty_fuzz_target_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="bloaty_fuzz_target_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="bloaty_fuzz_target_coverage_growth.svg">
+                </div>
+                <div id="bloaty_fuzz_target_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="bloaty_fuzz_target_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>5005.250</td>
+      <td>1623.002120</td>
+      <td>2273.0</td>
+      <td>2960.25</td>
+      <td>5879.5</td>
+      <td>6061.25</td>
+      <td>6475.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>16.0</td>
+      <td>4736.875</td>
+      <td>1607.947755</td>
+      <td>1598.0</td>
+      <td>4425.75</td>
+      <td>5380.0</td>
+      <td>5809.00</td>
+      <td>6015.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>4417.400</td>
+      <td>1544.752353</td>
+      <td>1934.0</td>
+      <td>2617.75</td>
+      <td>5280.5</td>
+      <td>5624.00</td>
+      <td>5967.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>4784.900</td>
+      <td>1424.045087</td>
+      <td>1326.0</td>
+      <td>4740.75</td>
+      <td>5275.5</td>
+      <td>5581.50</td>
+      <td>5980.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>3628.300</td>
+      <td>1681.707907</td>
+      <td>1461.0</td>
+      <td>1722.25</td>
+      <td>4308.0</td>
+      <td>5273.75</td>
+      <td>5416.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>3393.450</td>
+      <td>1139.124570</td>
+      <td>1551.0</td>
+      <td>2438.00</td>
+      <td>3966.0</td>
+      <td>4191.50</td>
+      <td>4645.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="bloaty_fuzz_target_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="bloaty_fuzz_target_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="bloaty_fuzz_target" -->
+        
+
+        <div id="curl_curl_fuzzer_http" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">curl_curl_fuzzer_http summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="curl_curl_fuzzer_http_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="curl_curl_fuzzer_http_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#curl_curl_fuzzer_http_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#curl_curl_fuzzer_http_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="curl_curl_fuzzer_http_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="curl_curl_fuzzer_http_coverage_growth.svg">
+                </div>
+                <div id="curl_curl_fuzzer_http_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="curl_curl_fuzzer_http_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>8339.10</td>
+      <td>692.894607</td>
+      <td>6043.0</td>
+      <td>7988.00</td>
+      <td>8418.0</td>
+      <td>8819.50</td>
+      <td>9089.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7996.00</td>
+      <td>1021.338544</td>
+      <td>5445.0</td>
+      <td>7717.50</td>
+      <td>8417.5</td>
+      <td>8596.75</td>
+      <td>9105.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7582.90</td>
+      <td>549.432425</td>
+      <td>6325.0</td>
+      <td>7175.00</td>
+      <td>7649.5</td>
+      <td>7920.00</td>
+      <td>8657.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7406.25</td>
+      <td>825.241265</td>
+      <td>4957.0</td>
+      <td>7354.75</td>
+      <td>7636.5</td>
+      <td>7804.25</td>
+      <td>8163.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7468.75</td>
+      <td>579.801316</td>
+      <td>5403.0</td>
+      <td>7329.75</td>
+      <td>7608.0</td>
+      <td>7824.75</td>
+      <td>8082.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7006.90</td>
+      <td>782.260887</td>
+      <td>4959.0</td>
+      <td>6702.50</td>
+      <td>6969.0</td>
+      <td>7486.25</td>
+      <td>8749.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="curl_curl_fuzzer_http_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="curl_curl_fuzzer_http_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="curl_curl_fuzzer_http" -->
+        
+
+        <div id="freetype2-2017" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">freetype2-2017 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="freetype2-2017_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="freetype2-2017_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#freetype2-2017_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#freetype2-2017_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="freetype2-2017_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="freetype2-2017_coverage_growth.svg">
+                </div>
+                <div id="freetype2-2017_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="freetype2-2017_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>10386.15</td>
+      <td>1204.230843</td>
+      <td>6797.0</td>
+      <td>9754.75</td>
+      <td>10881.5</td>
+      <td>11098.75</td>
+      <td>11567.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>9244.10</td>
+      <td>1175.552632</td>
+      <td>6603.0</td>
+      <td>8496.75</td>
+      <td>8872.5</td>
+      <td>10478.75</td>
+      <td>10811.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7224.95</td>
+      <td>1195.911697</td>
+      <td>5162.0</td>
+      <td>6150.25</td>
+      <td>7341.0</td>
+      <td>8062.50</td>
+      <td>9584.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>6898.55</td>
+      <td>1555.546628</td>
+      <td>5002.0</td>
+      <td>5255.75</td>
+      <td>6916.5</td>
+      <td>8139.50</td>
+      <td>9161.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>5960.70</td>
+      <td>1567.806550</td>
+      <td>3985.0</td>
+      <td>4568.00</td>
+      <td>5851.0</td>
+      <td>7931.25</td>
+      <td>8181.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>5686.00</td>
+      <td>1215.023023</td>
+      <td>3977.0</td>
+      <td>4638.50</td>
+      <td>5577.5</td>
+      <td>6469.75</td>
+      <td>8611.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="freetype2-2017_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="freetype2-2017_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="freetype2-2017" -->
+        
+
+        <div id="harfbuzz-1.3.2" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">harfbuzz-1.3.2 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="harfbuzz-1.3.2_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="harfbuzz-1.3.2_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#harfbuzz-1.3.2_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#harfbuzz-1.3.2_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="harfbuzz-1.3.2_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="harfbuzz-1.3.2_coverage_growth.svg">
+                </div>
+                <div id="harfbuzz-1.3.2_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="harfbuzz-1.3.2_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7380.05</td>
+      <td>145.877914</td>
+      <td>7155.0</td>
+      <td>7256.25</td>
+      <td>7382.0</td>
+      <td>7492.25</td>
+      <td>7711.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>6797.85</td>
+      <td>478.160871</td>
+      <td>5939.0</td>
+      <td>6299.25</td>
+      <td>7052.5</td>
+      <td>7164.75</td>
+      <td>7380.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>6142.00</td>
+      <td>1325.662297</td>
+      <td>3125.0</td>
+      <td>5889.00</td>
+      <td>6838.5</td>
+      <td>6997.25</td>
+      <td>7198.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>6074.05</td>
+      <td>1311.041991</td>
+      <td>3104.0</td>
+      <td>5759.00</td>
+      <td>6517.0</td>
+      <td>7029.25</td>
+      <td>7245.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>5904.15</td>
+      <td>1244.654476</td>
+      <td>3245.0</td>
+      <td>5415.00</td>
+      <td>6300.0</td>
+      <td>6939.75</td>
+      <td>7202.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>5984.40</td>
+      <td>1305.724941</td>
+      <td>3032.0</td>
+      <td>5801.00</td>
+      <td>6278.0</td>
+      <td>6947.75</td>
+      <td>7108.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="harfbuzz-1.3.2_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="harfbuzz-1.3.2_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="harfbuzz-1.3.2" -->
+        
+
+        <div id="jsoncpp_jsoncpp_fuzzer" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">jsoncpp_jsoncpp_fuzzer summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="jsoncpp_jsoncpp_fuzzer_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="jsoncpp_jsoncpp_fuzzer_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#jsoncpp_jsoncpp_fuzzer_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#jsoncpp_jsoncpp_fuzzer_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="jsoncpp_jsoncpp_fuzzer_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="jsoncpp_jsoncpp_fuzzer_coverage_growth.svg">
+                </div>
+                <div id="jsoncpp_jsoncpp_fuzzer_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="jsoncpp_jsoncpp_fuzzer_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>519.00</td>
+      <td>0.000000</td>
+      <td>519.0</td>
+      <td>519.0</td>
+      <td>519.0</td>
+      <td>519.0</td>
+      <td>519.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>519.00</td>
+      <td>0.000000</td>
+      <td>519.0</td>
+      <td>519.0</td>
+      <td>519.0</td>
+      <td>519.0</td>
+      <td>519.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>516.25</td>
+      <td>0.786398</td>
+      <td>515.0</td>
+      <td>516.0</td>
+      <td>516.0</td>
+      <td>516.0</td>
+      <td>518.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>513.85</td>
+      <td>0.366348</td>
+      <td>513.0</td>
+      <td>514.0</td>
+      <td>514.0</td>
+      <td>514.0</td>
+      <td>514.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>512.95</td>
+      <td>1.099043</td>
+      <td>511.0</td>
+      <td>512.0</td>
+      <td>513.0</td>
+      <td>514.0</td>
+      <td>514.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>512.80</td>
+      <td>0.894427</td>
+      <td>512.0</td>
+      <td>512.0</td>
+      <td>512.5</td>
+      <td>514.0</td>
+      <td>514.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="jsoncpp_jsoncpp_fuzzer_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="jsoncpp_jsoncpp_fuzzer_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="jsoncpp_jsoncpp_fuzzer" -->
+        
+
+        <div id="lcms-2017-03-21" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">lcms-2017-03-21 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="lcms-2017-03-21_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="lcms-2017-03-21_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#lcms-2017-03-21_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#lcms-2017-03-21_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="lcms-2017-03-21_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="lcms-2017-03-21_coverage_growth.svg">
+                </div>
+                <div id="lcms-2017-03-21_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="lcms-2017-03-21_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1726.80</td>
+      <td>285.834070</td>
+      <td>637.0</td>
+      <td>1711.50</td>
+      <td>1803.0</td>
+      <td>1840.25</td>
+      <td>1974.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1817.55</td>
+      <td>95.573325</td>
+      <td>1594.0</td>
+      <td>1786.75</td>
+      <td>1802.0</td>
+      <td>1867.00</td>
+      <td>2015.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1678.85</td>
+      <td>278.742906</td>
+      <td>818.0</td>
+      <td>1650.25</td>
+      <td>1789.5</td>
+      <td>1849.00</td>
+      <td>1966.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1658.00</td>
+      <td>352.597728</td>
+      <td>587.0</td>
+      <td>1633.25</td>
+      <td>1786.5</td>
+      <td>1841.00</td>
+      <td>1967.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1727.15</td>
+      <td>155.955552</td>
+      <td>1334.0</td>
+      <td>1719.50</td>
+      <td>1771.0</td>
+      <td>1836.50</td>
+      <td>1870.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1665.25</td>
+      <td>134.126757</td>
+      <td>1423.0</td>
+      <td>1584.75</td>
+      <td>1704.5</td>
+      <td>1755.50</td>
+      <td>1912.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="lcms-2017-03-21_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="lcms-2017-03-21_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="lcms-2017-03-21" -->
+        
+
+        <div id="libjpeg-turbo-07-2017" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">libjpeg-turbo-07-2017 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libjpeg-turbo-07-2017_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libjpeg-turbo-07-2017_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#libjpeg-turbo-07-2017_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#libjpeg-turbo-07-2017_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="libjpeg-turbo-07-2017_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libjpeg-turbo-07-2017_coverage_growth.svg">
+                </div>
+                <div id="libjpeg-turbo-07-2017_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libjpeg-turbo-07-2017_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1953.45</td>
+      <td>310.803454</td>
+      <td>660.0</td>
+      <td>2022.75</td>
+      <td>2042.0</td>
+      <td>2054.00</td>
+      <td>2082.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1962.45</td>
+      <td>246.099782</td>
+      <td>945.0</td>
+      <td>1960.00</td>
+      <td>2032.5</td>
+      <td>2053.50</td>
+      <td>2079.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1726.60</td>
+      <td>519.277271</td>
+      <td>507.0</td>
+      <td>1837.50</td>
+      <td>2009.5</td>
+      <td>2019.50</td>
+      <td>2052.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1734.45</td>
+      <td>550.235497</td>
+      <td>507.0</td>
+      <td>1873.50</td>
+      <td>2007.5</td>
+      <td>2031.25</td>
+      <td>2044.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1646.20</td>
+      <td>556.231644</td>
+      <td>506.0</td>
+      <td>1769.25</td>
+      <td>1873.5</td>
+      <td>1994.00</td>
+      <td>2016.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1714.50</td>
+      <td>422.249053</td>
+      <td>511.0</td>
+      <td>1756.25</td>
+      <td>1860.0</td>
+      <td>2002.50</td>
+      <td>2017.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libjpeg-turbo-07-2017_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libjpeg-turbo-07-2017_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="libjpeg-turbo-07-2017" -->
+        
+
+        <div id="libpcap_fuzz_both" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">libpcap_fuzz_both summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libpcap_fuzz_both_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libpcap_fuzz_both_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#libpcap_fuzz_both_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#libpcap_fuzz_both_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="libpcap_fuzz_both_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libpcap_fuzz_both_coverage_growth.svg">
+                </div>
+                <div id="libpcap_fuzz_both_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libpcap_fuzz_both_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2879.25</td>
+      <td>153.200892</td>
+      <td>2594.0</td>
+      <td>2760.75</td>
+      <td>2922.0</td>
+      <td>2971.50</td>
+      <td>3122.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2780.10</td>
+      <td>285.045684</td>
+      <td>1922.0</td>
+      <td>2689.75</td>
+      <td>2805.0</td>
+      <td>2927.50</td>
+      <td>3174.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2789.75</td>
+      <td>97.043059</td>
+      <td>2532.0</td>
+      <td>2744.00</td>
+      <td>2771.0</td>
+      <td>2852.75</td>
+      <td>2942.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2689.20</td>
+      <td>326.335894</td>
+      <td>1780.0</td>
+      <td>2614.75</td>
+      <td>2752.0</td>
+      <td>2872.50</td>
+      <td>3058.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2688.00</td>
+      <td>137.171426</td>
+      <td>2427.0</td>
+      <td>2585.50</td>
+      <td>2693.0</td>
+      <td>2786.00</td>
+      <td>2907.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2455.40</td>
+      <td>163.005780</td>
+      <td>1920.0</td>
+      <td>2380.25</td>
+      <td>2459.5</td>
+      <td>2557.75</td>
+      <td>2687.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libpcap_fuzz_both_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libpcap_fuzz_both_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="libpcap_fuzz_both" -->
+        
+
+        <div id="libpng-1.2.56" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">libpng-1.2.56 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libpng-1.2.56_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libpng-1.2.56_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#libpng-1.2.56_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#libpng-1.2.56_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="libpng-1.2.56_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libpng-1.2.56_coverage_growth.svg">
+                </div>
+                <div id="libpng-1.2.56_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libpng-1.2.56_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>993.10</td>
+      <td>109.095275</td>
+      <td>776.0</td>
+      <td>954.25</td>
+      <td>1046.0</td>
+      <td>1068.25</td>
+      <td>1078.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>962.55</td>
+      <td>116.914487</td>
+      <td>734.0</td>
+      <td>843.25</td>
+      <td>1024.5</td>
+      <td>1051.50</td>
+      <td>1084.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1001.05</td>
+      <td>75.998251</td>
+      <td>787.0</td>
+      <td>1020.00</td>
+      <td>1024.0</td>
+      <td>1031.50</td>
+      <td>1056.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>995.55</td>
+      <td>33.363193</td>
+      <td>911.0</td>
+      <td>983.50</td>
+      <td>1002.0</td>
+      <td>1025.00</td>
+      <td>1029.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>982.65</td>
+      <td>30.338919</td>
+      <td>915.0</td>
+      <td>978.75</td>
+      <td>990.0</td>
+      <td>1007.00</td>
+      <td>1027.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>892.10</td>
+      <td>131.905030</td>
+      <td>674.0</td>
+      <td>749.50</td>
+      <td>977.5</td>
+      <td>982.00</td>
+      <td>1004.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libpng-1.2.56_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libpng-1.2.56_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="libpng-1.2.56" -->
+        
+
+        <div id="libxml2-v2.9.2" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">libxml2-v2.9.2 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libxml2-v2.9.2_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libxml2-v2.9.2_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#libxml2-v2.9.2_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#libxml2-v2.9.2_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="libxml2-v2.9.2_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libxml2-v2.9.2_coverage_growth.svg">
+                </div>
+                <div id="libxml2-v2.9.2_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libxml2-v2.9.2_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>8557.30</td>
+      <td>248.828011</td>
+      <td>7990.0</td>
+      <td>8387.75</td>
+      <td>8679.0</td>
+      <td>8736.25</td>
+      <td>8887.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>8407.65</td>
+      <td>217.453994</td>
+      <td>7809.0</td>
+      <td>8357.75</td>
+      <td>8465.0</td>
+      <td>8550.00</td>
+      <td>8666.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>8197.10</td>
+      <td>262.669073</td>
+      <td>7568.0</td>
+      <td>8083.50</td>
+      <td>8266.5</td>
+      <td>8406.75</td>
+      <td>8471.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>8245.20</td>
+      <td>231.882139</td>
+      <td>7818.0</td>
+      <td>8182.25</td>
+      <td>8231.0</td>
+      <td>8404.75</td>
+      <td>8629.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>8103.45</td>
+      <td>283.980814</td>
+      <td>7358.0</td>
+      <td>7988.00</td>
+      <td>8093.0</td>
+      <td>8330.75</td>
+      <td>8507.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7690.70</td>
+      <td>785.467417</td>
+      <td>5335.0</td>
+      <td>7708.75</td>
+      <td>7841.0</td>
+      <td>8181.75</td>
+      <td>8377.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libxml2-v2.9.2_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libxml2-v2.9.2_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="libxml2-v2.9.2" -->
+        
+
+        <div id="libxslt_xpath" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">libxslt_xpath summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libxslt_xpath_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libxslt_xpath_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#libxslt_xpath_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#libxslt_xpath_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="libxslt_xpath_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libxslt_xpath_coverage_growth.svg">
+                </div>
+                <div id="libxslt_xpath_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="libxslt_xpath_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7790.20</td>
+      <td>772.660925</td>
+      <td>6545.0</td>
+      <td>7215.50</td>
+      <td>7990.5</td>
+      <td>8286.00</td>
+      <td>9043.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>8068.30</td>
+      <td>335.311183</td>
+      <td>7753.0</td>
+      <td>7868.25</td>
+      <td>7926.0</td>
+      <td>8153.25</td>
+      <td>8974.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>7083.65</td>
+      <td>619.636759</td>
+      <td>6314.0</td>
+      <td>6681.50</td>
+      <td>6780.0</td>
+      <td>7580.75</td>
+      <td>8456.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>6886.35</td>
+      <td>646.995426</td>
+      <td>6352.0</td>
+      <td>6376.50</td>
+      <td>6507.0</td>
+      <td>7655.75</td>
+      <td>8130.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>6953.00</td>
+      <td>688.769307</td>
+      <td>6354.0</td>
+      <td>6391.25</td>
+      <td>6488.5</td>
+      <td>7666.00</td>
+      <td>8287.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>6644.90</td>
+      <td>444.761781</td>
+      <td>6242.0</td>
+      <td>6411.75</td>
+      <td>6456.0</td>
+      <td>6673.75</td>
+      <td>7924.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libxslt_xpath_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="libxslt_xpath_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="libxslt_xpath" -->
+        
+
+        <div id="mbedtls_fuzz_dtlsclient" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">mbedtls_fuzz_dtlsclient summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="mbedtls_fuzz_dtlsclient_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="mbedtls_fuzz_dtlsclient_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#mbedtls_fuzz_dtlsclient_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#mbedtls_fuzz_dtlsclient_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="mbedtls_fuzz_dtlsclient_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="mbedtls_fuzz_dtlsclient_coverage_growth.svg">
+                </div>
+                <div id="mbedtls_fuzz_dtlsclient_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="mbedtls_fuzz_dtlsclient_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2161.60</td>
+      <td>303.071366</td>
+      <td>1625.0</td>
+      <td>2016.75</td>
+      <td>2039.5</td>
+      <td>2482.00</td>
+      <td>2552.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2051.85</td>
+      <td>316.236799</td>
+      <td>1624.0</td>
+      <td>1849.50</td>
+      <td>2010.5</td>
+      <td>2442.50</td>
+      <td>2509.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2045.20</td>
+      <td>310.184258</td>
+      <td>1614.0</td>
+      <td>1899.00</td>
+      <td>2003.0</td>
+      <td>2253.50</td>
+      <td>2524.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2096.20</td>
+      <td>322.195201</td>
+      <td>1549.0</td>
+      <td>1906.75</td>
+      <td>1994.0</td>
+      <td>2462.50</td>
+      <td>2521.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1998.90</td>
+      <td>270.183739</td>
+      <td>1610.0</td>
+      <td>1894.50</td>
+      <td>1992.0</td>
+      <td>2082.75</td>
+      <td>2480.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1907.40</td>
+      <td>250.977332</td>
+      <td>1620.0</td>
+      <td>1635.00</td>
+      <td>1928.5</td>
+      <td>2012.75</td>
+      <td>2455.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="mbedtls_fuzz_dtlsclient_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="mbedtls_fuzz_dtlsclient_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="mbedtls_fuzz_dtlsclient" -->
+        
+
+        <div id="openssl_x509" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">openssl_x509 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="openssl_x509_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="openssl_x509_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#openssl_x509_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#openssl_x509_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="openssl_x509_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="openssl_x509_coverage_growth.svg">
+                </div>
+                <div id="openssl_x509_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="openssl_x509_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2848.20</td>
+      <td>567.685384</td>
+      <td>1821.0</td>
+      <td>2653.75</td>
+      <td>2859.0</td>
+      <td>3213.00</td>
+      <td>3867.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2792.90</td>
+      <td>475.587714</td>
+      <td>1825.0</td>
+      <td>2569.25</td>
+      <td>2740.0</td>
+      <td>3126.50</td>
+      <td>3584.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2776.55</td>
+      <td>579.408453</td>
+      <td>1820.0</td>
+      <td>2488.00</td>
+      <td>2720.0</td>
+      <td>3208.50</td>
+      <td>3793.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2743.35</td>
+      <td>509.155366</td>
+      <td>1821.0</td>
+      <td>2593.75</td>
+      <td>2687.0</td>
+      <td>3186.25</td>
+      <td>3638.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2790.15</td>
+      <td>582.649057</td>
+      <td>1822.0</td>
+      <td>2527.75</td>
+      <td>2650.0</td>
+      <td>3247.75</td>
+      <td>3747.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2704.75</td>
+      <td>548.822364</td>
+      <td>1819.0</td>
+      <td>2426.50</td>
+      <td>2606.0</td>
+      <td>3055.00</td>
+      <td>3789.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="openssl_x509_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="openssl_x509_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="openssl_x509" -->
+        
+
+        <div id="openthread-2019-12-23" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">openthread-2019-12-23 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="openthread-2019-12-23_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="openthread-2019-12-23_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#openthread-2019-12-23_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#openthread-2019-12-23_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="openthread-2019-12-23_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="openthread-2019-12-23_coverage_growth.svg">
+                </div>
+                <div id="openthread-2019-12-23_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="openthread-2019-12-23_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2530.15</td>
+      <td>228.637676</td>
+      <td>2170.0</td>
+      <td>2285.25</td>
+      <td>2571.0</td>
+      <td>2722.50</td>
+      <td>2808.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2390.10</td>
+      <td>280.197844</td>
+      <td>1940.0</td>
+      <td>2177.75</td>
+      <td>2537.5</td>
+      <td>2605.50</td>
+      <td>2769.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2431.80</td>
+      <td>233.913074</td>
+      <td>2140.0</td>
+      <td>2209.75</td>
+      <td>2433.5</td>
+      <td>2670.50</td>
+      <td>2786.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2501.75</td>
+      <td>386.810150</td>
+      <td>2216.0</td>
+      <td>2234.50</td>
+      <td>2249.0</td>
+      <td>2644.50</td>
+      <td>3628.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2393.85</td>
+      <td>244.383494</td>
+      <td>2215.0</td>
+      <td>2234.00</td>
+      <td>2245.5</td>
+      <td>2559.25</td>
+      <td>3050.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2307.15</td>
+      <td>240.311481</td>
+      <td>1942.0</td>
+      <td>2131.50</td>
+      <td>2187.5</td>
+      <td>2556.25</td>
+      <td>2647.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="openthread-2019-12-23_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="openthread-2019-12-23_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="openthread-2019-12-23" -->
+        
+
+        <div id="php_php-fuzz-parser" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">php_php-fuzz-parser summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="php_php-fuzz-parser_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="php_php-fuzz-parser_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#php_php-fuzz-parser_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#php_php-fuzz-parser_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="php_php-fuzz-parser_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="php_php-fuzz-parser_coverage_growth.svg">
+                </div>
+                <div id="php_php-fuzz-parser_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="php_php-fuzz-parser_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>13130.60</td>
+      <td>647.453506</td>
+      <td>11485.0</td>
+      <td>12848.75</td>
+      <td>13189.5</td>
+      <td>13606.50</td>
+      <td>14276.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>12747.50</td>
+      <td>341.928509</td>
+      <td>12336.0</td>
+      <td>12535.50</td>
+      <td>12633.5</td>
+      <td>12948.00</td>
+      <td>13758.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>12533.55</td>
+      <td>581.948313</td>
+      <td>11278.0</td>
+      <td>12208.75</td>
+      <td>12584.5</td>
+      <td>12802.50</td>
+      <td>14081.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>12521.70</td>
+      <td>541.111731</td>
+      <td>11787.0</td>
+      <td>12232.25</td>
+      <td>12439.5</td>
+      <td>12592.50</td>
+      <td>14256.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>12480.20</td>
+      <td>466.319588</td>
+      <td>11748.0</td>
+      <td>12244.75</td>
+      <td>12408.0</td>
+      <td>12669.75</td>
+      <td>14087.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>11292.15</td>
+      <td>995.976658</td>
+      <td>9379.0</td>
+      <td>10483.00</td>
+      <td>11807.0</td>
+      <td>12099.75</td>
+      <td>12442.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="php_php-fuzz-parser_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="php_php-fuzz-parser_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="php_php-fuzz-parser" -->
+        
+
+        <div id="proj4-2017-08-14" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">proj4-2017-08-14 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="proj4-2017-08-14_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="proj4-2017-08-14_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#proj4-2017-08-14_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#proj4-2017-08-14_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="proj4-2017-08-14_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="proj4-2017-08-14_coverage_growth.svg">
+                </div>
+                <div id="proj4-2017-08-14_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="proj4-2017-08-14_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>4428.05</td>
+      <td>59.074863</td>
+      <td>4321.0</td>
+      <td>4379.00</td>
+      <td>4436.0</td>
+      <td>4455.25</td>
+      <td>4535.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>4330.35</td>
+      <td>45.447801</td>
+      <td>4245.0</td>
+      <td>4312.00</td>
+      <td>4334.0</td>
+      <td>4349.25</td>
+      <td>4430.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>4260.10</td>
+      <td>119.521810</td>
+      <td>3986.0</td>
+      <td>4209.00</td>
+      <td>4278.5</td>
+      <td>4330.25</td>
+      <td>4465.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>3999.10</td>
+      <td>140.340151</td>
+      <td>3656.0</td>
+      <td>3918.75</td>
+      <td>4020.0</td>
+      <td>4076.25</td>
+      <td>4233.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2914.55</td>
+      <td>183.746815</td>
+      <td>2755.0</td>
+      <td>2803.50</td>
+      <td>2858.0</td>
+      <td>2947.50</td>
+      <td>3490.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2825.25</td>
+      <td>79.764703</td>
+      <td>2739.0</td>
+      <td>2771.25</td>
+      <td>2803.0</td>
+      <td>2856.75</td>
+      <td>3044.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="proj4-2017-08-14_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="proj4-2017-08-14_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="proj4-2017-08-14" -->
+        
+
+        <div id="re2-2014-12-09" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">re2-2014-12-09 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="re2-2014-12-09_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="re2-2014-12-09_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#re2-2014-12-09_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#re2-2014-12-09_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="re2-2014-12-09_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="re2-2014-12-09_coverage_growth.svg">
+                </div>
+                <div id="re2-2014-12-09_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="re2-2014-12-09_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2559.15</td>
+      <td>6.815424</td>
+      <td>2551.0</td>
+      <td>2555.00</td>
+      <td>2557.0</td>
+      <td>2560.25</td>
+      <td>2572.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2544.90</td>
+      <td>20.028664</td>
+      <td>2504.0</td>
+      <td>2532.25</td>
+      <td>2549.0</td>
+      <td>2562.00</td>
+      <td>2564.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2547.50</td>
+      <td>7.584610</td>
+      <td>2534.0</td>
+      <td>2541.75</td>
+      <td>2546.5</td>
+      <td>2552.00</td>
+      <td>2563.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2549.50</td>
+      <td>9.450703</td>
+      <td>2534.0</td>
+      <td>2543.75</td>
+      <td>2545.0</td>
+      <td>2557.25</td>
+      <td>2566.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2541.65</td>
+      <td>6.401275</td>
+      <td>2532.0</td>
+      <td>2538.00</td>
+      <td>2541.0</td>
+      <td>2543.50</td>
+      <td>2559.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>2520.35</td>
+      <td>5.546692</td>
+      <td>2510.0</td>
+      <td>2516.75</td>
+      <td>2520.5</td>
+      <td>2523.25</td>
+      <td>2532.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="re2-2014-12-09_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="re2-2014-12-09_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="re2-2014-12-09" -->
+        
+
+        <div id="sqlite3_ossfuzz" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">sqlite3_ossfuzz summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="sqlite3_ossfuzz_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="sqlite3_ossfuzz_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#sqlite3_ossfuzz_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#sqlite3_ossfuzz_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="sqlite3_ossfuzz_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="sqlite3_ossfuzz_coverage_growth.svg">
+                </div>
+                <div id="sqlite3_ossfuzz_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="sqlite3_ossfuzz_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>12302.50</td>
+      <td>972.034085</td>
+      <td>8790.0</td>
+      <td>12039.75</td>
+      <td>12407.0</td>
+      <td>12724.00</td>
+      <td>13463.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>11825.10</td>
+      <td>1125.758126</td>
+      <td>10595.0</td>
+      <td>11072.75</td>
+      <td>11252.5</td>
+      <td>12770.25</td>
+      <td>13789.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>11425.50</td>
+      <td>1203.873288</td>
+      <td>9365.0</td>
+      <td>10430.00</td>
+      <td>11207.0</td>
+      <td>12508.00</td>
+      <td>13477.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>11418.05</td>
+      <td>950.889748</td>
+      <td>10193.0</td>
+      <td>10543.00</td>
+      <td>11161.5</td>
+      <td>12150.00</td>
+      <td>13435.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>11094.40</td>
+      <td>1264.809384</td>
+      <td>9535.0</td>
+      <td>10254.00</td>
+      <td>10535.5</td>
+      <td>12159.25</td>
+      <td>13262.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>10212.05</td>
+      <td>682.682054</td>
+      <td>9052.0</td>
+      <td>9585.75</td>
+      <td>10372.0</td>
+      <td>10614.75</td>
+      <td>11374.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="sqlite3_ossfuzz_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="sqlite3_ossfuzz_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="sqlite3_ossfuzz" -->
+        
+
+        <div id="systemd_fuzz-link-parser" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">systemd_fuzz-link-parser summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="systemd_fuzz-link-parser_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="systemd_fuzz-link-parser_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#systemd_fuzz-link-parser_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#systemd_fuzz-link-parser_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="systemd_fuzz-link-parser_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="systemd_fuzz-link-parser_coverage_growth.svg">
+                </div>
+                <div id="systemd_fuzz-link-parser_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="systemd_fuzz-link-parser_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>200.15</td>
+      <td>23.256635</td>
+      <td>159.0</td>
+      <td>185.25</td>
+      <td>200.5</td>
+      <td>220.25</td>
+      <td>232.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>165.35</td>
+      <td>35.173667</td>
+      <td>67.0</td>
+      <td>151.75</td>
+      <td>170.0</td>
+      <td>182.50</td>
+      <td>232.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>162.55</td>
+      <td>36.961538</td>
+      <td>52.0</td>
+      <td>148.75</td>
+      <td>169.0</td>
+      <td>179.50</td>
+      <td>232.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>140.70</td>
+      <td>44.293400</td>
+      <td>41.0</td>
+      <td>115.00</td>
+      <td>147.0</td>
+      <td>168.00</td>
+      <td>214.0</td>
+    </tr>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>147.80</td>
+      <td>39.466975</td>
+      <td>83.0</td>
+      <td>115.00</td>
+      <td>147.0</td>
+      <td>168.75</td>
+      <td>217.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>143.10</td>
+      <td>45.595360</td>
+      <td>41.0</td>
+      <td>115.00</td>
+      <td>147.0</td>
+      <td>168.75</td>
+      <td>213.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="systemd_fuzz-link-parser_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="systemd_fuzz-link-parser_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="systemd_fuzz-link-parser" -->
+        
+
+        <div id="vorbis-2017-12-11" class="section scrollspy">
+
+            <h2 class="green-text text-darken-3">vorbis-2017-12-11 summary</h2>
+
+            <div class="row">
+                <div class="col s6">
+            
+                    <h5 class="center-align">Ranking by median reached code coverage</h5>
+                    <img class="responsive-img materialboxed"
+                         src="vorbis-2017-12-11_ranking.svg">
+            
+                </div>
+                <div class="col s6">
+                    <h5 class="center-align">Reached code coverage distribution</h5>
+                    <img class="responsive-img materialboxed"
+                         src="vorbis-2017-12-11_boxplot.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+            
+                      <li class="tab col s6"><a href="#vorbis-2017-12-11_code_normal" class="green-text text-darken-3">Code coverage (linear)</a></li>
+                      <li class="tab col s6"><a href="#vorbis-2017-12-11_code_logscale" class="green-text text-darken-3">Code coverage (log)</a></li>
+            
+                    </ul>
+                </div>
+                <div id="vorbis-2017-12-11_code_normal" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="vorbis-2017-12-11_coverage_growth.svg">
+                </div>
+                <div id="vorbis-2017-12-11_code_logscale" class="col s12">
+                    <h5 class="center-align">Mean code coverage growth over time</h5>
+                    <img class="responsive-img materialboxed"
+                         src="vorbis-2017-12-11_coverage_growth_logscale.svg">
+                </div>
+            
+                <div class="center-align">
+                    * The error bands show the 95% confidence interval
+                      around the mean code coverage.
+                </div>
+            </div>
+
+            
+
+            
+
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        Sample statistics and statistical significance (code coverage)
+                    </div>
+                    <div class="collapsible-body">
+
+                        <h5 class="center-align">Code coverage sample statistics</h5>
+                        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>median</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>fuzzer</th>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>aflplusplus</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1180.600000</td>
+      <td>185.206400</td>
+      <td>701.0</td>
+      <td>1245.50</td>
+      <td>1258.0</td>
+      <td>1262.00</td>
+      <td>1274.0</td>
+    </tr>
+    <tr>
+      <th>entropic</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1195.400000</td>
+      <td>147.775577</td>
+      <td>782.0</td>
+      <td>1249.75</td>
+      <td>1256.5</td>
+      <td>1259.25</td>
+      <td>1264.0</td>
+    </tr>
+    <tr>
+      <th>eclipser</th>
+      <th>86400</th>
+      <td>19.0</td>
+      <td>1103.842105</td>
+      <td>317.270348</td>
+      <td>206.0</td>
+      <td>1189.50</td>
+      <td>1247.0</td>
+      <td>1249.50</td>
+      <td>1251.0</td>
+    </tr>
+    <tr>
+      <th>afl</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1095.000000</td>
+      <td>318.943321</td>
+      <td>205.0</td>
+      <td>1188.00</td>
+      <td>1245.0</td>
+      <td>1248.50</td>
+      <td>1256.0</td>
+    </tr>
+    <tr>
+      <th>honggfuzz</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1161.750000</td>
+      <td>179.556141</td>
+      <td>699.0</td>
+      <td>1223.50</td>
+      <td>1241.5</td>
+      <td>1247.00</td>
+      <td>1250.0</td>
+    </tr>
+    <tr>
+      <th>libfuzzer</th>
+      <th>86400</th>
+      <td>20.0</td>
+      <td>1173.700000</td>
+      <td>116.446554</td>
+      <td>783.0</td>
+      <td>1146.00</td>
+      <td>1224.0</td>
+      <td>1237.50</td>
+      <td>1265.0</td>
+    </tr>
+  </tbody>
+</table>
+                        <br>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <h5 class="center-align">Vargha-Delaney A12 measure</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="vorbis-2017-12-11_varga_delaney_a12_plot.svg">
+                                    The table summarizes the A12 values from the
+                                    pairwise Vargha-Delaney A measure of effect size.
+                                    Green cells indicate the probability the fuzzer in the
+                                    row will outperform the fuzzer in the column.
+                            </div>
+
+                            <div class="col s6">
+                                <h5 class="center-align">Mann-Whitney U test</h4>
+                                    <img class="responsive-img materialboxed"
+                                         src="vorbis-2017-12-11_mann_whitney_plot.svg">
+                                    The table summarizes the p values of
+                                    pairwise Mann-Whitney U tests.
+                                    Green cells indicate that the reached
+                                    coverage distribution of a given fuzzer pair
+                                    is significantly different.
+                            </div>
+                        </div> <!-- row -->
+
+                    </div>
+                </li>
+            </ul>
+
+            
+
+        </div> <!-- id="vorbis-2017-12-11" -->
+        
+
+        <div id="data" class="section scrollspy">
+            <h2 class="green-text text-darken-3">experiment data</h2>
+            You can download the raw data for this report <a href="data.csv.gz">here</a>.
+
+            <br><br>
+            Check out the <a href="https://google.github.io/fuzzbench/developing-fuzzbench/custom_analysis_and_reports">documentation</a> on how to create customized reports using this data.
+            Also see some example Colab notebooks for doing custom analysis on the data <a href="https://github.com/google/fuzzbench/tree/master/analysis/notebooks">here</a>.
+
+            
+
+            
+            <br><br>
+            Experiment Description:<br><br>
+            from cached data
+            
+        </div>    <!-- id="data" -->
+
+    </div> <!-- class="col" -->
+
+    <div class="col hide-on-med-and-down l2">
+        <ul class="section table-of-contents">
+            <li><a href="#summary">experiment summary</a></li>
+            
+            <li><a href="#bloaty_fuzz_target">bloaty_fuzz_target</a></li>
+            
+            <li><a href="#curl_curl_fuzzer_http">curl_curl_fuzzer_http</a></li>
+            
+            <li><a href="#freetype2-2017">freetype2-2017</a></li>
+            
+            <li><a href="#harfbuzz-1.3.2">harfbuzz-1.3.2</a></li>
+            
+            <li><a href="#jsoncpp_jsoncpp_fuzzer">jsoncpp_jsoncpp_fuzzer</a></li>
+            
+            <li><a href="#lcms-2017-03-21">lcms-2017-03-21</a></li>
+            
+            <li><a href="#libjpeg-turbo-07-2017">libjpeg-turbo-07-2017</a></li>
+            
+            <li><a href="#libpcap_fuzz_both">libpcap_fuzz_both</a></li>
+            
+            <li><a href="#libpng-1.2.56">libpng-1.2.56</a></li>
+            
+            <li><a href="#libxml2-v2.9.2">libxml2-v2.9.2</a></li>
+            
+            <li><a href="#libxslt_xpath">libxslt_xpath</a></li>
+            
+            <li><a href="#mbedtls_fuzz_dtlsclient">mbedtls_fuzz_dtlsclient</a></li>
+            
+            <li><a href="#openssl_x509">openssl_x509</a></li>
+            
+            <li><a href="#openthread-2019-12-23">openthread-2019-12-23</a></li>
+            
+            <li><a href="#php_php-fuzz-parser">php_php-fuzz-parser</a></li>
+            
+            <li><a href="#proj4-2017-08-14">proj4-2017-08-14</a></li>
+            
+            <li><a href="#re2-2014-12-09">re2-2014-12-09</a></li>
+            
+            <li><a href="#sqlite3_ossfuzz">sqlite3_ossfuzz</a></li>
+            
+            <li><a href="#systemd_fuzz-link-parser">systemd_fuzz-link-parser</a></li>
+            
+            <li><a href="#vorbis-2017-12-11">vorbis-2017-12-11</a></li>
+            
+            <li><a href="#data">experiment data</a></li>
+        </ul>
+    </div>
+
+    </div> <!-- class="row" -->
+    </div> <!-- class="container" -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+     M.AutoInit();
+     document.addEventListener('DOMContentLoaded', function() {
+         var toc = document.querySelectorAll('.table-of-contents');
+         M.Pushpin.init(toc);
+
+         var scrollspy_elems = document.querySelectorAll('.scrollspy');
+         var scrollspy_options = {scrollOffset: 0};
+         M.ScrollSpy.init(scrollspy_elems, scrollspy_options);
+
+         var tabs_elems = document.querySelectorAll('.tabs');
+         var tabs_options = {duration: 500};
+         var instance = M.Tabs.init(tabs_elems, tabs_options);
+     });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+    <script>
+     anchors.add();
+    </script>
+</body>
+</html>
